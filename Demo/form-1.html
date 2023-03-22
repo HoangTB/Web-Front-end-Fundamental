@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+</head>
+<body>
+   <header><h1>Form Demo</h1></header>
+   <main>
+    <section>  
+        
+        <form action="#">
+            <table align="center" class="bang1">
+                <tr class="sothich">
+                <td colspan="2"><h3>SỞ THÍCH CỦA BẠN</h3></td>
+                </tr>
+                <tr>
+                    <td class="mauxanh"><label for="name" class="label">Họ và tên</label></td>
+                    <td><input type="text" name="name" value="" id="register_name" style="width:200px"/></td>
+                </tr>
+                <tr>
+                    <td class="mauxanh"><label for="email" class="label" >Email:</label></td>
+                    <td><input type="email" name="email" value="" id="register_email" style="width:200px"/></td>
+                </tr>
+                <tr>
+                    <td class="mauxanh"><label for="" class="label">Sở thích:</label></td>
+            
+                <td class="maucam">
+                    <input type="checkbox" name="" id="thethao">
+                    <label for="theothao">Thể thao</label>
+                    <input type="checkbox" name="" id="amnhac">
+                    <label for="amnhac">Âm nhạc</label>a
+                    <input type="checkbox" name="" id="docsach">
+                    <label for="docsach">Đọc sách</label><br>
+                    <input type="checkbox" name="" id="luotweb">
+                    <label for="luotweb">Lướt web</label>
+                    <input type="checkbox" name="" id="choigame">
+                    <label for="choigame">Chơi game</label>
+                    <input type="checkbox" name="" id="dienanh">
+                    <label for="dienanh">Điện ảnh</label><br>
+                    <input type="checkbox" name="" id="dulich">
+                    <label for="dulich">Du lịch</label>
+                </td>
+                </tr>
+                <tr class="login">
+                    <td colspan="2">
+                    <input type="submit" id="" value="Gửi thông tin"/>
+                    <input type="reset" id="" value="Nhập lại">
+
+                </td>
+              </tr>
+            </table>
+          </form>
+
+
+    </section>
+    <style>
+    h1{
+        text-align: center;
+    }
+
+    .bang1{
+        border: 15px  solid  skyblue;
+        width: 500px;
+        text-align: left;
+        }
+    .login{
+        text-align: center;
+        }
+    .sothich{
+        text-align: center;
+        background-color: rgb(236, 32, 83);
+        }
+    h3{
+        margin: 5px;
+        color: white;
+        }
+    .mauxanh{
+        color: blue;
+    }
+    .maucam{
+        color: coral;
+    }
+    </style>
+ </main>
+<br>
+<br>
+ <main>
+
+<div border="center">
+<h4 class="tieude" style="color: blue;">ĐĂNG KÍ HỌC VIÊN</h4>
+</form>
+    
+    <section class="bang2">
+        <label id="name">Họ và tên:</label>
+        <input type="text" style="margin-left: 80px;"><br><br>
+        <label id="birt">Ngày sinh:</label>
+        <input type="number" style="margin-left: 77px;"><br><br>
+        <label>Giới tính:</label>
+    <section style="margin-left: 140px;">
+        <input type="radio" name="gender" value="male">
+        <label>Nam</label>
+        <input type="radio" name="gender" value="female">
+        <label>Nữ</label><br><br>
+    </section>
+        <label>Địa chỉ</label>
+        <textarea rows="4" cols="40" style="margin-left: 100px;"></textarea><br><br>
+        <label>Lớp</label>
+    <select style="margin-left: 120px;">
+        <option value="">--Chọn lớp--</option>
+        <option>Lớp 1</option>
+        <option>Lớp 2</option>
+    </select><br><br>    
+        <label>Email</label>
+        <input type="text" id="email" style="margin-left: 108px;"><br><br>
+        <label>Điện thoại</label>
+        <input type="number" id="number" style="margin-left: 80px;"><br><br>
+    <section style="margin-left: 150px;">
+        <input type="submit" value="Đăng ký">
+        <input type="reset" value="Nhập lại"><br><br>
+    </section>
+</form>
+<style>
+    div{
+        margin-left: 30%;
+        margin-right: 30%;
+    }
+.tieude{
+background-color: rgb(206, 255, 157);
+margin:0%;
+height: 25px;
+padding-top: 15px;
+}
+.bang2{
+    background-color: rgb(247, 239, 130);
+}
+
+</style>
+</div>
+<br>
+<main>
+    <form>
+        <table class="bang3">
+            <tr class="hocvien">
+                <td colspan="2"><h4>ĐĂNG KÍ HỌC VIÊN</h4></td>
+            </tr>
+            <tr>
+                <td><label id="name">Họ và tên:</label></td>
+                <td><input type="text"></td>
+            </tr>
+            <tr>
+                <td><label id="birthday">Ngày sinh:</label></td>
+                <td><input type="number"></td>
+            </tr>
+            <tr>
+                <td valign="top"><label>Giới tính:</label></td>
+                <td>
+                    
+
+                        <input type="radio" name="gender" value="male">
+                        <label>Nam</label>
+                        <input type="radio" name="gender" value="female">
+                        <label>Nữ</label><br><br>
+                    
+                </td>
+            </tr>
+            <tr>
+                <td><label>Địa chỉ:</label></td>
+                <td><textarea rows="4" cols="40"></textarea></td>
+            </tr>
+            <tr>
+                <td><label>Lớp:</label></td>
+                <td>
+                    <select>
+                        <option value="">--Chọn lớp--</option>
+                        <option>Lớp 1</option>
+                        <option>Lớp 2</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td><label>Email:</label></td>
+                <td><input type="text" id="email"></td>
+            </tr>
+            <tr>
+                <td><label>Điện thoại:</label></td>
+                <td><input type="number" id="number"></td>
+            </tr><br>
+            <tr>
+                <td colspan="2">
+                    <section style="margin-left: 100px;">
+                    <input type="submit" value="Đăng ký">
+                    <input type="reset" value="Nhập lại"><br><br>
+                    </section>
+                </td>
+            </tr>
+        </table>
+    </form>
+    <style>
+        .bang3{
+            background-color: rgb(245, 250, 183);
+            margin-left: 30%;
+            width: 40%;
+    
+        }
+        .hocvien{
+        background-color: rgb(117, 207, 129);
+        }
+    </style>
+</main>
+ </main>
+
+</body>
+</html>
