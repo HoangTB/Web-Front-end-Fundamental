@@ -10,6 +10,21 @@
     padding: 20px 10px;
 }
 
-li{
+.BesiktasH2{
+    font-family: 'Times New Roman', Times, serif;
+    padding-left: 30px;
+}
+p{
+
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 20px;
+    padding: 20px 30px;
+    margin: 0;
 
 }
+div{
+    background-color: bisque;
+    margin: 50px 500px;
+    padding: 10px 5px;
+
+    }
