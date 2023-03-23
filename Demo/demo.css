@@ -1,8 +1,11 @@
+/* test1 */
 .external{
     font-size: 20px;
     font-family: Arial, Helvetica, sans-serif;
     color: rgb(255, 0, 0);
 }
+
+/* test2 */
 .external2{
     background-color: rgb(252, 223, 150);
     font-family: Arial, Helvetica, sans-serif;
@@ -22,9 +25,75 @@ p{
     margin: 0;
 
 }
-div{
+.typediv{
     background-color: bisque;
     margin: 50px 500px;
     padding: 10px 5px;
 
-    }
+    }   
+
+/* test3 */
+.typebody{
+    background-color: black;
+    color: aliceblue;
+    font-size: 30px;
+    font-family: 'Times New Roman', Times, serif;
+    font-style: italic;
+}
+.typelogo{
+    width: 200px;
+    padding: 20px 10px;
+}
+.logobox{
+    background-color: white;
+    width: 220px;
+    float: left;
+    margin: 20px 10px;
+}
+.boxlist{
+    padding-top: 30px;
+    width: 1600px;
+}
+.headerlist{
+    list-style-type: none;
+    display: inline;
+    padding: 0;
+  
+
+}   
+.headerlist a {
+    float: left;
+    display: block;
+    color: rgb(255, 255, 255);
+    text-align: center; 
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 30px;
+}
+   
+.headerlist a:hover {
+    background-color: #ddd;
+    color: rgb(255, 0, 0);
+}
+   
+.headerlist a.active {
+    background-color: #ffffff;
+    color: white;
+}
+input{
+width: 250px;
+margin: 20px;
+
+    
+}
+
+.section1{
+    float: left;
+    width: 30%;
+}
+.section2{
+    float: right;
+    width: 60%;
+
+}
+   
