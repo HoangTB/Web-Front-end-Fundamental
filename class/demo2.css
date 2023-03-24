@@ -1,0 +1,30 @@
+main {
+    width: 450px;
+    height: 500px;
+    margin: auto;
+    border: 20px solid;
+    border-image-slice: 1;
+    border-image-source: linear-gradient(to right bottom, #2b0ed1, #ffffff);
+    display: flex;
+    overflow: hidden;
+    scroll-behavior: smooth;
+  }
+  .slider {
+    width: 450px;
+    flex-shrink: 0;
+    display: flex;
+  }
+
+  #click {
+    text-align: center;
+    margin-top: 20px;
+  }
+  #click a {
+    padding: 10px 14px;
+    background-color: #000000;
+    color: white;
+    
+  }
+  #click a:hover {
+    background-color: rgb(255, 0, 0);
+  }
