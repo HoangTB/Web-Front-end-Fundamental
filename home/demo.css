@@ -1,7 +1,7 @@
 
 main{   
     width: 60%;
-    height: 1800px;
+    height: 1850px;
     background-color: #f9f5f2;
     border: 1px solid #ffc400;
     border-radius: 20px;
@@ -12,7 +12,7 @@ main{
 
 img{
     display: block;
-    margin: 40px;
+    margin: 20px;
     width: auto;
     height: auto;
     box-shadow: -10px -10px 1px 1px #414817;
@@ -20,7 +20,7 @@ img{
     
 }
 .layout1{
-    width: 35%;
+    width: 38%;
     margin: 60px;
     float: left;
 }
@@ -30,7 +30,7 @@ img{
 }
 .border1{
     border: 1px solid #b7a465;
-    width: 430px;
+    width: 420px;
     height: 10px;
     margin: 10px 1px;
 }
@@ -62,7 +62,9 @@ h4 p{
 
 }
 td{
-    width: 270px;
+    width: 450px;
+    padding: 8px 5px;
+ 
 }
 .thanks{
 
@@ -70,7 +72,7 @@ td{
     height: 50px;
     background-color:#dbd8d0;
     display: flex;
-    margin: 10px 120px;
+    margin: 10px 70px;
 }
 .thanks p{
     font-size: 50px;
@@ -79,5 +81,5 @@ td{
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     text-shadow: 5px 5px 5px #b7a465;
     color: #b7a465;
-    margin: -30px 270px;
+    margin: -30px 300px;
 }
