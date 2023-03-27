@@ -12,10 +12,10 @@ main{
 
 img{
     display: block;
-    margin: 20px;
-    width: auto;
-    height: auto;
-    box-shadow: -10px -10px 1px 1px #414817;
+    margin: 70px;
+    width: 300px;
+    box-shadow: 5px 10px 15px #b7a465;
+    border-radius: 50%;
     
     
 }
