@@ -61,3 +61,22 @@ BEGIN
                     DISPLAY E
 
 END
+
+<!-- Bai 10 -->
+
+BEGIN
+    INPUT YEAR
+    
+    IF YEAR %  4==0
+            DISPLAY NAM NHUAN
+        IF YEAR % 100==0
+          AND IF YEAR % 400==0
+                DISPLAY NAM NHUAN
+              ELSE 
+                DISPLAY NAM KO NHUAN
+
+        ELSE 
+          DISPLAY NAM NHUAN
+
+    ELSE 
+      DISPLAY NAM KO NHUAN
