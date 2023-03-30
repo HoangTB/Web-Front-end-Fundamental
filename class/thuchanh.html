@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="thuchanh.css">
     <title>Document</title>
 </head>
 <body>
@@ -11,13 +12,13 @@
         <table>
 
         <tr>
-            <td>
+            <td colspan="2">
                 <p for="">Firt Name</p>
                 <input type="text" name="firtname" id="firtname">
             </td>
         </tr>
         <tr>
-            <td>
+            <td colspan="2">
                 <p for="">Last Name</p>
                 <input type="text" name="lastname" id="lastname">
             </td>
@@ -31,12 +32,13 @@
                 <p>Street Address</p>
             </td>
         </tr>
-        <tr cosplan="2">
-            <td><input type="text" name="addressline2" id="addressline2">
+        <tr>
+            <td colspan="2">
+                <input type="text" name="addressline2" id="addressline2">
                 <p>Addressline 2</p>
             </td>
         </tr>
-        <tr  cosplan="2">
+        <tr>
             <td>
                 <input type="text" name="city" id="city">
                 <p>City</p>
@@ -48,17 +50,17 @@
         </tr>
         <tr>
             <td>
-                <input type="text" name="postal" id="postal">
+                <input type="number" name="postal" id="postal">
                 <p>Postal/Zip Code</p>
 
             </td>
             <td>
                 <select name="" id="country">
-                    <option value="">-Select-</option>
-                    <option value="">Đà Nẵng</option>
-                    <option value="">Hồ Chí Minh</option>
-                    <option value="">Hà Nội</option>
-                    <option value="">Hải Phòng</option>
+                    <option value="select">-Select-</option>
+                    <option value="Đà Nẵng">Đà Nẵng</option>
+                    <option value="Hồ Chí Minh">Hồ Chí Minh</option>
+                    <option value="Hà Nội">Hà Nội</option>
+                    <option value="Hải Phòng">Hải Phòng</option>
                 </select>
                 <p>Country</p>
 
@@ -70,22 +72,22 @@
         </table>    
         <div>
         <p>What the progress status?</p>   
-        <input type="range">
+        <label for="">0</label><input type="range" value="100%" max="100%" min="0"><label for="">100</label>
         </div>
         <p>Do you need anymore materials?</p>   
-        <input type="radio" id="yes" name="materials"><label>Yes</label><br>
-        <input type="radio" id="no" name="materials"><label>No</label>
+        <input type="radio" id="yes" name="yes-no" value="Yes"><label>Yes</label><br>
+        <input type="radio" id="no  " name="yes-no" value="No"><label>No</label>
         </div>
         <div>
             <p>What more do you need?</p>  
-            <input type="checkbox" id="sand" name="materials"><label>Sand</label><br>
+            <input type="checkbox" id="sand" name="materials" value="Sand"><label>Sand</label><br>
             <input type="checkbox" id="bricks" name="materials"><label>Bricks</label><br> 
             <input type="checkbox" id="rod" name="materials"><label>Rods</label> <br>
             <input type="checkbox" id="other" name="materials"><label>Other</label> 
         </div>
         <div>
             <p>Any other comment?</p>   
-            <textarea name="" id="" cols="50" rows="10"></textarea>
+            <textarea name="comment" id="comment" cols="60" rows="8"></textarea>
         </div>
         <button onclick="summit()">Summit</button>
 
@@ -94,14 +96,5 @@
  
 </body>
 <script src="./thuchanh.js"></script>
-<style>
-    section{
-        padding: 30px 30px;
-        border: 1px solid black;
-        width: 500px;
-     
-        
-    }
 
-</style>
 </html>
