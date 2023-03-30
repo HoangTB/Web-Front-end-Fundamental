@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<section>
+        <table>
+
+        <tr>
+            <td>
+                <p for="">Firt Name</p>
+                <input type="text" name="firtname" id="firtname">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p for="">Last Name</p>
+                <input type="text" name="lastname" id="lastname">
+            </td>
+        </tr>
+     
+        <tr>
+            
+            <td colspan="2">
+                <p for="">Where are you ?</p>
+                <input type="text" name="streetaddress" id="streetaddress">
+                <p>Street Address</p>
+            </td>
+        </tr>
+        <tr cosplan="2">
+            <td><input type="text" name="addressline2" id="addressline2">
+                <p>Addressline 2</p>
+            </td>
+        </tr>
+        <tr  cosplan="2">
+            <td>
+                <input type="text" name="city" id="city">
+                <p>City</p>
+            </td>
+            <td>
+                <input type="text" name="state" id="state">
+                <p>State/Region/Province</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="text" name="postal" id="postal">
+                <p>Postal/Zip Code</p>
+
+            </td>
+            <td>
+                <select name="" id="country">
+                    <option value="">-Select-</option>
+                    <option value="">Đà Nẵng</option>
+                    <option value="">Hồ Chí Minh</option>
+                    <option value="">Hà Nội</option>
+                    <option value="">Hải Phòng</option>
+                </select>
+                <p>Country</p>
+
+            </td>
+
+        </tr>
+
+
+        </table>    
+        <div>
+        <p>What the progress status?</p>   
+        <input type="range">
+        </div>
+        <p>Do you need anymore materials?</p>   
+        <input type="radio" id="yes" name="materials"><label>Yes</label><br>
+        <input type="radio" id="no" name="materials"><label>No</label>
+        </div>
+        <div>
+            <p>What more do you need?</p>  
+            <input type="checkbox" id="sand" name="materials"><label>Sand</label><br>
+            <input type="checkbox" id="bricks" name="materials"><label>Bricks</label><br> 
+            <input type="checkbox" id="rod" name="materials"><label>Rods</label> <br>
+            <input type="checkbox" id="other" name="materials"><label>Other</label> 
+        </div>
+        <div>
+            <p>Any other comment?</p>   
+            <textarea name="" id="" cols="50" rows="10"></textarea>
+        </div>
+        <button onclick="summit()">Summit</button>
+
+    </section>
+    <div>
+ 
+</body>
+<script src="./thuchanh.js"></script>
+<style>
+    section{
+        padding: 30px 30px;
+        border: 1px solid black;
+        width: 500px;
+     
+        
+    }
+
+</style>
+</html>

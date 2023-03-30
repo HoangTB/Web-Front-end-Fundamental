@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <label for="">Amount</label>
+        <input type="number" name="amount" id="amount" placeholder="Nhập số tiền muốn chuyển">
+        <label>From Currency</label>
+            <select name="currency1" id="currency1">
+                <option value="VND" id="VND">VND</option>
+                <option value="USD" id="USD">USD</option>
+            </select>
+
+        <label for="">To Currency</label>
+        <select name="currency1" id="currency1">
+            <option value="VND" id="VND">VND</option>
+            <option value="USD" id="USD">USD</option>
+        </select>
+        <button onclick="convert()">Convert</button>
+        <br>
+        <input type="text" name="" id="result" disable placeholder="Nhận kết quả sau khi convert">
+
+        </div>
+
+
+
+<style>
+    div{
+        border: 1px solid black;
+        width: 1000px ;
+        height: 200px;
+        padding-top: 30px;
+        text-align: center;
+    }
+
+    input{
+        height: 30px;
+ 
+    }
+    #result{
+        margin: 20px 20px;
+    }
+
+</style>
+
+            
+
+
+
+    <script src="./ex2.js"></script>
+</body>
+</html>
