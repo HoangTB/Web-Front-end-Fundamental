@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    const arr = [];
+
+// Nhập đầu vào từ người dùng
+for (let i = 0; i < 10; i++) {
+  const input = parseInt(prompt(`Nhập phần tử thứ ${i + 1}: `));
+  arr.push(input);
+}
+
+// Đếm số lượng phần tử lớn hơn hoặc bằng 10
+let count = 0;
+for (let i = 0; i < arr.length; i++) {
+  if (arr[i] >= 10) {
+    count++;
+  }
+}
+
+// Hiển thị kết quả
+console.log(`${count}`);
+console.log(`Có ${count} số lớn hơn hoặc bằng 10 trong mảng.`);
+</script>
+</body>
+</html>
