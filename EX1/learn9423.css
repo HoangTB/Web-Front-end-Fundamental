@@ -1,0 +1,51 @@
+.explore{
+    background-color: #C7EEFF;
+    width: 1500px;
+    height: 600px;
+    position: relative;
+
+
+}
+
+.container{
+    position: absolute  ;
+    width: 600px;
+}
+
+.image > img{
+    position: absolute;
+    width: 450px;
+    left: 820px;
+    top: 45px;
+
+}
+.elipses {
+    position: absolute;
+    width: 450px;
+    height: 450px;
+    border-radius: 50%;
+    background-color: #0077C0 ;
+    left: 820px;
+}
+
+.car1{
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    background-color:white;
+    top : 300px;
+    left: 800px;
+    text-align: center; 
+  
+}   
+
+.car2{
+    position: absolute;
+    width: 160px;
+    height: 120px;
+    background-color:white;
+    top : 100px;
+    left: 1100px;
+    text-align: center;
+ 
+}
