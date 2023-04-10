@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<style> 
+    div{
+        height: 500px;
+        border: 1px solid black;
+        border-radius: 5px;
+        padding: 10px;
+    }
+    
+    h1{
+        text-align: center;
+
+    }
+  
+  
+    table, tr{
+        border: 1px solid black;
+        text-align: center;
+    }
+    td{
+        text-align: center;
+    }
+
+    table input{
+        outline: none;
+        border: none;
+  
+
+    }
+</style>
+
+    <div>
+        <h1>Tạo bảng Update</h1>
+        <input type="text" id="textInput" placeholder="Add thêm sản phẩm">
+        <input type="button" onclick="addList()" value="Add">
+        <input type="button" name="" id="textUpdate" value="Update">
+        <hr>
+        <table cellpadding="20">
+            <tr>
+                <th>Stt</th>
+                <th>Name</th>
+                <th>Action</th>
+            </tr>
+        </table>
+    </div>
+    <script src="product.js"></script>
+</body>
+</html>
