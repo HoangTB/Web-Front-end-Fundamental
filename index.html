@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <style>
+      * {
+        font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+          "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+      }
+
+      .myUser {
+        width: 1000px;
+        border: 1px solid black;
+        border-radius: 5px;
+        margin: auto;
+        box-shadow: 2px 2px 1px grey;
+      }
+
+      table {
+        width: 970px;
+        margin: 10px;
+      }
+
+      th {
+        border-bottom: 1px solid black;
+        text-align: left;
+      }
+
+      td {
+        border-bottom: 1px solid rgb(189, 186, 186);
+      }
+
+      img {
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+        object-fit: cover;
+      }
+
+      h1 {
+        background-color: black;
+        height: 50px;
+        color: white;
+        margin: 0;
+        display: flex;
+        align-items: center;
+        padding-left: 10px;
+      }
+
+      input {
+        margin: 10px;
+      }
+
+      #deleteUser {
+        color: red;
+        border: 1px solid red;
+      }
+
+      #deleteUser:hover {
+        color: rgb(253, 253, 253);
+        background-color: red;
+        border: 1px solid red;
+        cursor: pointer;
+      }
+
+      #editUser:hover {
+        background-color: black;
+        color: white;
+        cursor: pointer;
+      }
+
+      #createUser {
+        width: 80px;
+        height: 50px;
+        background-color: grey;
+        color: white;
+        border-radius: 5px;
+        border: none;
+        margin-left: 10px;
+      }
+
+      #createUser:hover,
+      #saveUser:hover,
+      #updateUser:hover {
+        color: black;
+        background-color: white;
+        box-shadow: 1px 1px 5px grey;
+        cursor: pointer;
+      }
+
+      #saveUser,
+      #updateUser {
+        height: 40px;
+        background-color: grey;
+        color: white;
+        border-radius: 5px;
+        border: none;
+        margin-left: 10px;
+      }
+
+      #addUser {
+        width: 870px;
+        height: 50px;
+        outline: none;
+        border: none;
+        box-shadow: 1px 1px 1px grey;
+      }
+
+      #form {
+        padding: 10px 10px;
+        display: none;
+      }
+
+      #form > * {
+        display: grid;
+        grid-template-columns: 30% 50%;
+        align-items: baseline;
+        font-weight: bolder;
+        height: 30px;
+      }
+
+      #form button {
+        width: 200px;
+      }
+
+      #updateUser,
+      #saveUser {
+        display: none;
+      }
+    </style>
+    <div class="myUser">
+      <h1>My App</h1>
+      <br />
+      <input
+        type="text"
+        name=""
+        id="addUser"
+        placeholder="Search User"
+        oninput="searchUser(this.value)"
+      /><button id="createUser" onclick="handleAdd()">Create</button>
+      <div id="form">
+        <div>
+          <label for="image">Avatar:</label>
+          <input type="file" name="" id="image" name="image" /><br />
+        </div>
+        <div>
+          <label for="image">First:</label>
+          <input type="text" name="" id="first" name="first" /><br />
+        </div>
+        <div>
+          <label for="image">Last:</label>
+          <input type="text" name="" id="lats" name="lats" /><br />
+        </div>
+        <div>
+          <label for="image">UserName:</label>
+          <input type="text" name="" id="username" name="username" />
+        </div>
+        <br />
+        <div>
+          <button onclick="clickSave()" id="saveUser">Save</button>
+          <button id="updateUser">Update</button>
+        </div>
+      </div>
+      <table cellpadding="10">
+        <tr>
+          <th>#</th>
+          <th>Avatar</th>
+          <th>First</th>
+          <th>Last</th>
+          <th>UserName</th>
+          <th>Action</th>
+        </tr>
+      </table>
+    </div>
+
+    <script src="scrip.js"></script>
+  </body>
+</html>
