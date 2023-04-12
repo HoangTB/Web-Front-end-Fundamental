@@ -1,0 +1,140 @@
+.appdrink{
+    width: 1200px;
+    margin: auto;
+    border: 1px solid rgba(99, 214, 10, 0.927);
+    box-shadow: 1px 1px 3px gray;
+}
+.img {
+    width: 1200px;
+    height: 400px;
+    margin: auto;
+    object-fit: fill;
+
+}
+.content_Header{
+    position: relative;
+
+}
+h1{
+    position: absolute;
+    top: 20px;
+    left: 500px;
+    font-family:'Times New Roman', Times, serif;
+    font-style: italic;
+    color: rgb(14, 169, 58);
+    font-size: 40px;
+    text-shadow: 2px 2px 0px #98d49a, 5px 5px 0px rgba(3, 143, 63, 0.912);
+}
+
+
+
+td >img {
+    width: 90px;
+    box-shadow: 1px 1px 5px grey;
+    border-radius: 50%;
+}
+th{
+    font-size: 25px;
+    height: 50px;
+    background-color:  #57e8c9;
+    color: white;
+}
+
+.content{
+    font-size: 18px;
+    padding: 10px 10px;
+   
+}
+
+tr,td {
+    padding: 20px 20px;
+    text-align: center;
+
+}
+
+tr:hover{
+background-color: #a1ffeb9a;
+ box-shadow: 1px 1px 1px grey;
+}
+
+table{
+    width: 1100px;
+    font-size: 20px;
+    margin: auto;
+    font-family:'Times New Roman', Times, serif;
+    padding: 10px 10px;
+    border-collapse: collapse;
+    background-color: rgb(241, 241, 241);
+
+
+  
+}
+
+button{
+    width: 100px;
+    height: 40px;
+    border: none;
+    box-shadow: 1px 1px 1px grey;
+    font-size: 15px;
+    border-radius: 5px;
+}
+
+button:hover{
+    background-color: rgb(205, 201, 201);
+    color: white;
+    cursor: pointer;
+}
+
+
+#form1  >*  {
+    display: grid;
+    grid-template-columns: 40% 60%;
+}
+
+.button_list{
+ display: flex;
+ justify-content:center;
+ margin-top: 10px;
+}
+#form1{
+    background-color:rgba(255, 255, 255, 0.6);
+    box-shadow: 1px 1px 5px grey;
+    width: 500px;
+    margin: auto;
+    position: absolute;
+    left: -100%;   
+    top: 8%;
+    transition: all 1s;
+    padding: 10px 10px;
+}
+
+
+#form2{
+    background-color:rgba(255, 255, 255, 0.6);
+    box-shadow: 1px 1px 5px grey;
+    margin: auto;
+    position: absolute;
+    left: -100%;
+    top: 15%;
+    transition: all 1s;
+ 
+}
+
+h4{
+    margin: 0;
+}
+
+#form2 , input{
+    height: 20px;
+}
+
+#search{
+    width: 800px;
+    height: 50px;
+    margin-left: 200px;
+    margin-top: 10px;
+    border: none;
+    box-shadow: 1px 1px 1px gray;
+    font-size: 20px;
+}
+
