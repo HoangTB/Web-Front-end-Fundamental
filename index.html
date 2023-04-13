@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <title>Wellcome Vinfast </title>
+</head>
+
+<body>
+    <header>
+        <div class="logobox">
+            <img class="typelogo" alt="" src="./images/logo.png">
+        </div>
+        <div class="boxlist">
+            <li class="headerlist"><a href="#"><b>Giới thiệu</b></a></li>
+            <li class="headerlist"><a href="#"><b>Ô tô</b></a></li>
+            <li class="headerlist"><a href="#"><b>Xe máy điện</b></a></li>
+            <li class="headerlist"><a href="#"><b>Dịch vụ</b></a></li>
+            <li class="headerlist"><a href="#"><b>Pin và trạm sạc</b></a></li>    
+            <li class="headerlist"><input type="text" name="" id="search" placeholder="Search...."></li>
+            <li class="headerlist"><i class='bx bx-search' onclick="handelSearch()"></i></li> 
+            <li class="headerlist"><input type="button" name="" id="" class="typelogin" value="Đăng Nhập"> <input type="button" name="" id="" class="typecreate" value="Đăng Ký"></li>
+            <li class="headerlist" class="list"><i class='bx bx-list-plus'></i></li>
+    
+        </div>
+    </header>
+    <div class="imageHeader">
+        <img src="./images/header_2.jpg" alt="">
+        <div class="contentImage">
+            <h1>VINFAST VIET NAM</h1>
+            <img src="./images/quochuy.gif" alt="">
+        </div>
+    </div>
+    <div>
+        <video  controls muted autoplay>
+            <source src="./video/VinFast VF 9 - SUV hạng E mạnh mẽ, sang trọng.mp4" type="video/mp4">
+          </video>
+    <div class="navi">
+        <div><h3><a href="">Ô TÔ</a></h3></div>
+        <div><h3><a href="">XE MÁY ĐIỆN</a></h3></div>
+        <div><h3><a href="">DỊCH VỤ</a></h3></div>
+    </div>
+        <div  class="contentCar">
+            <table id="form">              
+            </table>
+        </div>
+        <div class="contentMoto">
+            <table id="form">
+                <tr>
+                    <td colspan="3" class="formImage"><img src="${objectCar.image}" alt=""></td>
+                </tr>
+                <tr>
+                    <td colspan="3" class="name"><h3>${objectCar.name}</h3></td>
+                </tr>
+                <tr>
+                    <td colspan="3" class="solgan">${objectCar.slogan}</td>
+                </tr>
+                <tr>
+                    <td>
+                    <p><b>Dòng xe</b></p>
+                        <p>${objectCar.vehicles}</p>
+                    </td>
+                    <td>
+                        <p><b>Số chỗ ngồi</b></p>
+                        <p>${objectCar.seat}</p>
+                    </td>
+                    <td>
+                        <p><b>Quãng đường</b></p>
+                        <p>${objectCar.distance}</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="3" class="price"><p><b>${objectCar.price}</b></p></td>
+                </tr>
+                <tr>
+                    <td colspan="3" class="buttonForm"><button>Đặt cọc</button> <button>Xem chi tiết</button></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <footer>
+        <div>
+            <img src="./images/logo.png" alt="">
+            <h5>CÔNG TY TNHH KINH DOANH THƯƠNG MẠI VÀ DỊCH VỤ VINFAST</h5>
+            <p><b>MST/MSDN:</b>0108926276 do Sở KHĐT TP Hà Nội cấp lần đầu ngày 01/10/2019 và các lần thay đổi tiếp theo.</p>
+             <p><b>Địa chỉ trụ sở chính:Số 7, Đường Bằng Lăng 1, Khu đô thị sinh thái Vinhomes Riverside, Phường Việt Hưng, Quận Long Biên, Thành phố Hà Nội, Việt Nam</b></p>   
+        </div>
+        <div>
+            <p>VỀ VINFAST</p>
+            <p>VỀ VINGROUP</p>
+            <p>CỘNG ĐỒNG VINFAST TOÀN CẦU</p>
+            <p>TIN TỨC</p>
+            <p>ƯU ĐÃI</p>
+            <p>SHOWROOM VÀ ĐẠI LÝ</p>
+            <p>ĐIỀU KHOẢN CHÍNH SÁCH</p>
+        </div>
+        <div>
+            <p>HOTLINE</p>
+            <p><i class='bx bx-phone-call' ></i>1900 23 23 89</p>
+            <p><i class='bx bxl-gmail' ></i>support.vn@vinfastauto.com</p>
+            <p>LIÊN HỆ</p>
+            <p><i class='bx bxl-facebook-square' ></i><i class='bx bxl-youtube' ></i></p>
+        </div>
+        <div>
+            <p>ĐĂNG KÝ NHẬN THÔNG TIN</p>
+            <p>Đăng ký nhận thông tin chương trình khuyến mãi, dịch vụ VinFast</p>
+            <input type="text" placeholder="Nhập mail của quý khách"> <input type="button" name="" id=""  value="Đăng ký">
+            <p>Bằng cách đăng ký, Quý khách xác nhận đã đọc, hiểu và đồng ý với Chính sách quyền riêng tư của VinFast</p>
+        </div>
+    </footer>
+
+<script src="scrip.js"></script>
+</body>
+
+</html>
