@@ -7,84 +7,48 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <title>Wellcome Vinfast </title>
+    <title>Wellcome Vinfast</title>
+    <link rel="icon" href="./images/vftitle.png">
 </head>
 
 <body>
     <header>
-        <div class="logobox">
-            <img class="typelogo" alt="" src="./images/logo.png">
+        <div class="logobox"><a href="index.html">
+            <img class="typelogo" alt="" src="./images/logo.png"></a>
         </div>
         <div class="boxlist">
-            <li class="headerlist"><a href="#"><b>Giới thiệu</b></a></li>
-            <li class="headerlist"><a href="#"><b>Ô tô</b></a></li>
-            <li class="headerlist"><a href="#"><b>Xe máy điện</b></a></li>
-            <li class="headerlist"><a href="#"><b>Dịch vụ</b></a></li>
-            <li class="headerlist"><a href="#"><b>Pin và trạm sạc</b></a></li>    
-            <li class="headerlist"><input type="text" name="" id="search" placeholder="Search...."></li>
-            <li class="headerlist"><i class='bx bx-search' onclick="handelSearch()"></i></li> 
-            <li class="headerlist"><input type="button" name="" id="" class="typelogin" value="Đăng Nhập"> <input type="button" name="" id="" class="typecreate" value="Đăng Ký"></li>
+            <li class="headerlist"><a href="#">Giới thiệu</a></li>
+            <li class="headerlist"><a href="#">Ô tô</a></li>
+            <li class="headerlist"><a href="#">Xe máy điện</a></li>
+            <li class="headerlist"><a href="#">Dịch vụ</a></li>
+            <li class="headerlist"><a href="#">Pin và trạm sạc</a></li>    
+            <li class="headerlist"><input type="text" name="" id="search" placeholder="Search...." oninput="objectSearch(this.value)"></li>
+            <li class="headerlist"><input type="button" name="" id="" class="typelogin" value="Tài khoản"> <input type="button" name="" id="" class="typecreate" value="ĐĂNG KÝ LÁI THỬ"></li>
             <li class="headerlist" class="list"><i class='bx bx-list-plus'></i></li>
     
         </div>
     </header>
-    <div class="imageHeader">
-        <img src="./images/header_2.jpg" alt="">
-        <div class="contentImage">
-            <h1>VINFAST VIET NAM</h1>
-            <img src="./images/quochuy.gif" alt="">
+
+    <div>
+        <video  controls muted autoplay loop>
+            <source src="./video/vftraler.mp4" type="video/mp4">
+        </video>
+    <div class="navi">
+        <div><h3 onclick="handleOto()">Ô TÔ</h3></div>
+        <div><h3 onclick="handleMoto()">XE MÁY ĐIỆN</h3></div>
+        <div><h3>DỊCH VỤ</h3></div>
+    </div>
+        <div  class="contentCar">
+        </div>
+        <div class="contentMoto">
         </div>
     </div>
     <div>
-        <video  controls muted autoplay>
-            <source src="./video/VinFast VF 9 - SUV hạng E mạnh mẽ, sang trọng.mp4" type="video/mp4">
-          </video>
-    <div class="navi">
-        <div><h3><a href="">Ô TÔ</a></h3></div>
-        <div><h3><a href="">XE MÁY ĐIỆN</a></h3></div>
-        <div><h3><a href="">DỊCH VỤ</a></h3></div>
-    </div>
-        <div  class="contentCar">
-            <table id="form">              
-            </table>
-        </div>
-        <div class="contentMoto">
-            <table id="form">
-                <tr>
-                    <td colspan="3" class="formImage"><img src="${objectCar.image}" alt=""></td>
-                </tr>
-                <tr>
-                    <td colspan="3" class="name"><h3>${objectCar.name}</h3></td>
-                </tr>
-                <tr>
-                    <td colspan="3" class="solgan">${objectCar.slogan}</td>
-                </tr>
-                <tr>
-                    <td>
-                    <p><b>Dòng xe</b></p>
-                        <p>${objectCar.vehicles}</p>
-                    </td>
-                    <td>
-                        <p><b>Số chỗ ngồi</b></p>
-                        <p>${objectCar.seat}</p>
-                    </td>
-                    <td>
-                        <p><b>Quãng đường</b></p>
-                        <p>${objectCar.distance}</p>
-                    </td>
-                </tr>
-                <tr>
-                    <td colspan="3" class="price"><p><b>${objectCar.price}</b></p></td>
-                </tr>
-                <tr>
-                    <td colspan="3" class="buttonForm"><button>Đặt cọc</button> <button>Xem chi tiết</button></td>
-                </tr>
-            </table>
-        </div>
+        <img src="./images/header_2.jpg" alt="" class="imgUpfooter">
     </div>
     <footer>
         <div>
-            <img src="./images/logo.png" alt="">
+            <img src="./images/logo.png" alt="" class="imgfooter" >
             <h5>CÔNG TY TNHH KINH DOANH THƯƠNG MẠI VÀ DỊCH VỤ VINFAST</h5>
             <p><b>MST/MSDN:</b>0108926276 do Sở KHĐT TP Hà Nội cấp lần đầu ngày 01/10/2019 và các lần thay đổi tiếp theo.</p>
              <p><b>Địa chỉ trụ sở chính:Số 7, Đường Bằng Lăng 1, Khu đô thị sinh thái Vinhomes Riverside, Phường Việt Hưng, Quận Long Biên, Thành phố Hà Nội, Việt Nam</b></p>   
