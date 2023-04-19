@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <style>
+    img {
+      position: absolute;
+      top: 300px;
+      width: 100%;
+    }
+
+    div {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+
+    }
+
+    .game {
+
+      height: 600px;
+   
+      position: relative;
+      overflow: hidden;
+    }
+
+    .character {
+      width: 200px;
+      position: absolute;
+    }
+  </style>
+  <div class="game">
+    <button onclick="handelJump('jump')">Jump</button>
+    <button onclick="handelJump('right')">Right</button>
+    <div class="character">
+      <img src="./image/khi.png" alt="">
+    </div>
+  </div>
+
+  </div>
+
+  <script>
+    class Character {
+      constructor(name, x, y) {
+        this.name = name;
+        this.x = x;
+        this.y = y;
+
+      }
+      getJump() {
+        this.y -= 200;
+        if (this.y < -900) {
+          this.y = 100;
+        }
+      }
+
+
+      getRight() {
+        this.x += 20;
+        if (this.x > window.innerWidth) {
+          this.x = 100;
+        }
+      }
+      getX() {
+        return this.x;
+      }
+      getY() {
+        return this.y;
+      }
+    }
+    const monkey = new Character("monkey", 100, 100);
+    renderCharacter();
+    function renderCharacter() {
+      const element = document.querySelector(".character");
+      element.style.top = monkey.getY() + "px";
+      element.style.left = monkey.getX() + "px";
+    }
+    function handelJump(value) {
+
+      if(value === 'jump'){
+
+        monkey.getJump();
+      } else  {
+        monkey.getRight();
+      }
+     
+      
+      renderCharacter();
+    }
+
+  </script>
+</body>
+
+</html>
