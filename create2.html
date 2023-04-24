@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        width: 800px;
+        margin-top: 20px;
+        margin: auto;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        border: 1px solid black;
+    }
+
+    * {
+        box-sizing: border-box;
+    }
+
+    h1 {
+        text-align: center;
+    }
+
+    /* Add padding to containers */
+    .container {
+        padding: 16px;
+        background-color: white;
+    }
+
+    /* Full-width input fields */
+    input[type=text],
+    input[type=password] {
+        width: 100%;
+        padding: 15px;
+        margin: 5px 0 10px 0;
+        display: inline-block;
+        border: none;
+        background: #f1f1f1;
+    }
+
+
+
+    /* Overwrite default styles of hr */
+    hr {
+        border: 1px solid #f1f1f1;
+        margin-bottom: 25px;
+    }
+
+    /* Set a style for the submit button */
+    .registerbtn {
+        background-color: #002fff;
+        color: white;
+        padding: 16px 20px;
+        margin: 8px 0;
+        border: none;
+        cursor: pointer;
+        width: 100%;
+        opacity: 0.9;
+    }
+
+    .registerbtn:hover {
+        opacity: 1;
+    }
+
+    /* Add a blue text color to links */
+    a {
+        color: dodgerblue;
+    }
+
+    /* Set a grey background color and center the text of the "sign in" section */
+    .signin {
+        background-color: #f1f1f1;
+        text-align: center;
+    }
+
+    .error {
+        color: red;
+        font-style: italic;
+        font-size: 12px;
+    }
+</style>
+</head>
+
+<body>
+
+    <form id="form_create">
+        <div class="container">
+            <h1>Đăng ký thành viên</h1>
+            <hr>
+
+            <label for="email"><b>Email</b></label>
+            <input type="text" placeholder="Enter Email" name="email" id="email" required>
+            <p class="error" id="error-email"></p>
+
+            <label for="psw"><b>Password</b></label>
+            <input type="password" placeholder="Enter Password" name="psw" id="psw" required>
+            <p class="error" id="error-password"></p>
+
+            <label for="psw-repeat"><b>Repeat Password</b></label>
+            <input type="password" placeholder="Repeat Password" name="psw-repeat" id="psw-repeat" required>
+            <p class="error" id="error-repeat-password"></p>
+
+            <label for="psw-repeat"><b>Username</b></label>
+            <input type="text" placeholder="Enter username" name="username" id="username" required>
+
+            <label for="psw-repeat"><b>Address</b></label><br>
+            <textarea name="" id="" cols="102" rows="10"></textarea>
+            <hr>
+            <button type="submit" class="registerbtn" onclick="handleSubmit()">Đăng ký</button>
+        </div>
+
+        <div class="container signin">
+            <p>Already have an account? <a href="#">Sign in</a>.</p>
+        </div>
+    </form>
+
+    <body>
+        <script>
+            function handleSubmit() {
+                // B1. Lấy data từ form và local
+
+                const data = JSON.parse(localStorage.getItem("user")) || [];
+                const userForm = getFormInput();
+
+                // B2. Validator dữ liệu
+                const checkValidator = validator(userForm);
+                if (checkValidator.isError) {
+                    emailError.innerHTML = checkValidator.errorEmail;
+                    passwordError.innerHTML = checkValidator.errorPassword;
+                    repeatPasswordError.innerHTML = checkValidator.errorRepeatPassword;
+                } else {
+                    emailError.innerHTML = "";
+                    passwordError.innerHTML = "";
+                    repeatPasswordError.innerHTML = "";
+                };
+
+                // B3. Kiểm tra trùng lặp dữ liệu
+                let isDulicate = false;
+                data.forEach((user) => {
+                    if (user.email === userForm.email) {
+                        isDulicate = true;
+                    }
+                });
+                if (!isDulicate) {
+                    data.push(userForm);
+                    localStorage.setItem("users", JSON.stringify(data));
+                } else {
+                    const error = {
+                        isError: true,
+                        msg: "Trùng email",
+                    };
+                    renderError(error);
+                }
+            }
+
+            // Lấy giá trị Form
+            function getFormInput() {
+                userForm = document.querySelector("#form_create");
+                userForm.addEventListener("submit", (e) => {
+                    e.preventDefault();
+                    console.log(e);
+                    const signUpInfo = {
+                        email: e.target[0].value.trim().toLowerCase(),
+                        password: e.target[1].value.trim(),
+                        repeatPassword: e.target[2].value.trim(),
+                        username: e.target[3].value.trim(),
+                        address: e.target[4].value.trim(),
+                    };
+                });
+            }
+
+            // Hiển thị lỗi
+            function renderError(error) {
+                function validator(user) {
+                    let error = {
+                        isError: false,
+                        errorEmail: "",
+                        errorPassword: "",
+                        errorRepeatPassword: "",
+                    };
+                    const regxEmail =
+                        /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+
+                    if (!user.email.match(regxEmail)) {
+                        error.isError = true;
+                        error.errorEmail = "Email không đúng định dạng, vui lòng nhập lại";
+                    }
+                    formLocal.forEach(item => {
+                        if (item.email == user.email) {
+                            error.isError = true;
+                            error.errorEmail = "Email đã được đăng ký";
+                            return;
+                        }
+
+                    });
+
+                    if (user.password < 5) {
+                        error.isError = true;
+                        error.errorPassword = "Password phải nhập trên 5 kí tự";
+                    }
+                    if (user.repeatPassword !== user.password) {
+                        error.isError = true;
+                        error.errorRepeatPassword = "Mật khẩu không trùng với mật khẩu phía trên";
+                    }
+                    return error;
+
+                }
+            }
+
+            // //
+            // function validator(data) { }
+        </script>
+    </body>
+
+</html>

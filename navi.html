@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <title>Document</title>
+</head>
+<style>
+    *{
+        padding: 0;
+        margin: 0;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        font-style: italic;
+    }
+    header{
+        text-align: center;
+        margin: auto;
+        background-color: rgb(4, 122, 83);
+    }
+    .logo{
+        width: 300px;
+      
+    }
+    nav{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    ul{
+        display: flex;
+        list-style-type: none;
+        text-align: center;
+        margin: 10px 0px;
+        gap: 10px;
+    }
+    li{
+        width: 100px;
+        font-size: 20px;
+        color: white;
+        border-right: 1px solid white;
+        padding: 10px 10px;
+ 
+      
+    }
+
+    li:hover{
+        color: rgb(0, 0, 0);
+        border-right: 1px solid black;
+        transform: scale(1.1);
+        transition: 0.5s;
+    }
+    .bx{
+        font-size: 40px;
+        color: white;
+        display: none;
+    }
+    @media screen and (max-width: 768px) {
+        .boxUl, .bxs-x-square{
+            display: none;
+        }
+        .bx-list-ul{
+            display: inline;
+        }
+        
+}
+
+</style>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo"><img src="./images/logo.png" alt="" class="logo"></div>
+            <ul class="boxUl">
+                <li><a href="#about"></a>About us</li>
+                <li><a href="#product"></a>Product</li>
+                <li><a href="#service"></a>Services</li>
+                <li><a href="#contact"></a>Contact</li>
+            </ul>
+            <div><i class='bx bx-list-ul' onclick="showList()"></i><i class='bx bxs-x-square' onclick="showList()"></i></div>
+        </nav>
+    </header>
+    <script>
+         function showList(){
+            const showUl = document.querySelector(".boxUl");
+            const iconShow = document.querySelector(".bx-list-ul");
+            const iconClose = document.querySelector(".bxs-x-square");
+            if(showUl.style.display === "none"){
+                showUl.style.display = "inline";
+                iconShow.style.display = "none";
+                iconClose.style.display = "inline";
+
+            } else {
+                showUl.style.display = "none";
+                iconShow.style.display = "inline";
+                iconClose.style.display = "none"; 
+            } 
+        }
+
+        // window.addEventListener("resize", ()=>{ 
+        //     const ulElement = document.querySelector(".boxUl");
+        //     const iconShow = document.querySelector(".bx-list-ul");
+        //     console.log(window.innerWidth);
+        //     if (window.innerWidth > 768){
+        //         ulElement.style.display = "flex";
+        //     } else {
+        //         ulElement.style.display = "none";
+        //         iconShow.style.display = "inline";
+        //     }
+        // })
+
+
+    </script>
+</body>
+</html>
