@@ -1,0 +1,26 @@
+
+.content{
+    display: flex;
+    justify-content: space-around;
+    position: relative;
+}
+
+table,th,td {
+    border-collapse: collapse;
+    border: 1px solid black;
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;
+}
+th{
+    background-color: rgb(199, 196, 196);
+}
+#formCreate{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    border: 1px solid black;
+    gap: 10px;
+    padding: 10px;
+    width: 200px;
+    height: 200px;
+}

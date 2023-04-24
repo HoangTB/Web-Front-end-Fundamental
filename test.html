@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="test.css">
+</head>
+<body>
+<input type="text" name="" id="search" placeholder="search..."> <input type="button" name="" id="" value="Search" onclick="handelSearch()"><br/><br/>
+<div class="content">
+<table cellpadding="20">
+    <thead>
+        <th>#</th>
+        <th>Tên sinh viên</th>
+        <th>Năm sinh</th>
+        <th>Giới tính</th>
+        <th>Mô tả</th>
+    </thead>
+    <tbody class="form">
+        <tr>
+            <td>1</td>
+            <td>Nam</td>
+            <td>1995</td>
+            <td>Nam</td>
+            <td><input type="button" name="" id="edit" value="Edit" onclick="handelEdit()"> <input type="button" name="" id="delete" value="Delete" onclick="handelDelete()"></td>
+        </tr>
+    </tbody>
+</table>
+<form id="formCreate">
+    <caption>CREATE AND UPDATE</caption>
+    <input type="number" id="id" placeholder="id...">
+    <input type="text" name="" id="name" placeholder="Tên sinh viên...">
+    <input type="number" name="" id="year"  placeholder="Năm sinh...">
+    <input type="text" name="" id="sex" placeholder="Giới tính...">
+    <input type="button" name="" id="add" value="ADD" onclick="handelAdd()">
+    <input type="button" name="" id="update" value="UPDATE" onclick="handelUpdate()" hidden>
+</form>
+</div>
+<script src="test.js"></script>
+<script src="testDB.js"></script>
+</body>
+</html>

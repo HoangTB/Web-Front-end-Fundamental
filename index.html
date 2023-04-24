@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    table,
+    th,
+    td,
+    tr {
+        border-collapse: collapse;
+        border: 1px solid black;
+
+
+}
+
+</style>
+
+<body>
+    <header>
+        <h1>Trang quản lý đơn hàng</h1>
+    </header>
+    <div class="create">
+        <label for="">ID sản phẩm</label> <input type="number" id="id" >
+        <label for="">Tên sản phẩm</label> <input type="text" id="name" placeholder="Nhập sản phẩm">
+        <label for="">Giá</label> <input type="text" id="price" placeholder="Nhập sản phẩm">
+        <input type="submit" name="" id="" value="Submit" onclick="handelSubmit()">
+        <input type="submit" name="" id="" value="Update" onclick="handelUpdate()">
+        <input type="text" name="" id="search" placeholder="Sreach...">
+        <input type="submit" name="" id="" value="search" onclick="handelSearch()">
+    </div><br>
+    <table cellpadding="20">
+        <thead>
+            <th>#</th>
+            <th>Tên sản phẩm</th>
+            <th>Giá</th>
+            <th>Mô tả</th>
+        </thead>
+        <tbody class="table">
+            <tr>
+                <td>1</td>
+                <td>Lúa mì</td>
+                <td>20000</td>
+                <td>thực phẩm</td>
+                <td><input type="button" name="" id="" value="Edit" onclick="handelEdit()"> <input type="button" name="" id="" value="Delete">
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <script src="db.js"></script>
+    <script src="index.js"></script>
+</body>
+
+</html>
