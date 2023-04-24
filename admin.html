@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="admin.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <title>Wellcome Vinfast</title>
+    <link rel="icon" href="./images/vftitle.png">
+</head>
+
+<body>
+    <header>
+        <div class="logobox"><a href="index.html">
+                <img class="typelogo" alt="" src="./images/logo.png"></a>
+        </div>
+        <div>
+            <div class="headerlist"><input type="text" name="" id="search" placeholder="Search...."
+                    oninput="objectSearch(this.value)"></div>
+
+        </div>
+        <div class="bntHeader">
+            <div class="showBtn">
+                <input type="button" name="" id="login" class="typelogin" value="Login" onclick="handelSign()">
+            </div>
+            <div class="hiddenBtn">
+                <input type="button" name="" id="add" class="typelogin" value="Add" onclick="handelAdd()">
+                <label for="" class="showmail"></label>
+                <input type="text" name="" id="logout" class="" value="Logout" onclick="handelLogout()" >
+            </div>
+        </div>  
+
+        </div>
+    </header>
+    <!-- Form Edit -->
+    <div id="formEdit" class="animate">
+        <h3 class="titleforAdd">CHỈNH SỬA SẢN PHẨM</h3>
+        <div class="gird">
+            <input type="number" name="" id="idEdit" name="id" style="width: 50px;" hidden />
+        </div>
+        <div class="gird">
+            <label for="">Hình ảnh sản phẩm:</label>
+            <input type="file" name="" id="imageEdit" name="image" />
+        </div>
+        <div class="gird">
+            <label for="">Tên sản phẩm:</label>
+            <input type="text" name="" id="nameEdit" name="name" />
+        </div class="gird">
+
+        <div class="gird">
+            <label for="">Dòng xe:</label>
+            <input type="text" name="" id="vehiclesEdit" name="vehicles" />
+        </div class="gird">
+
+        <div class="gird">
+            <label for="">Quãng đường:</label>
+            <input type="text" name="" id="distanceEdit" name="distance" />
+        </div class="gird">
+        <div class="gird">
+            <label for="">Tính năng nổi bật:</label>
+            <textarea name="" id="detailEdit" cols="30" rows="5"></textarea>
+        </div>
+        <div class="gird">
+            <label for="">Giá sản phẩm:</label>
+            <input type="text" name="" id="priceEdit" name="price" />
+        </div>
+        <div class="flex">
+            <button id="btn-update" onclick="handelUpdate()">Update</button><button
+                onclick="handleEdit()">Cancel</button>
+        </div>
+    </div>
+    <!-- Form Create -->
+    <div id="formAdd" class="animate">
+        <h3 class="titleforAdd">THÊM SẢN PHẨM</h3>
+        <div class="gird">
+            <input type="number" name="" id="id" name="id" style="width: 50px;" hidden />
+        </div>
+        <div class="gird">
+            <label for="">Hình ảnh sản phẩm:</label>
+            <input type="file" name="" id="image" name="image" />
+        </div>
+        <div class="gird">
+            <label for="">Tên sản phẩm:</label>
+            <input type="text" name="" id="name" name="name" />
+        </div class="gird">
+
+        <div class="gird">
+            <label for="">Dòng xe:</label>
+            <input type="text" name="" id="vehicles" name="vehicles" />
+        </div class="gird">
+
+        <div class="gird">
+            <label for="">Quãng đường:</label>
+            <input type="text" name="" id="distance" name="distance" />
+        </div class="gird">
+        <div class="gird">
+            <label for="">Tính năng nổi bật:</label>
+            <textarea name="" id="detail" cols="30" rows="5"></textarea>
+        </div>
+        <div class="gird">
+            <label for="">Giá sản phẩm:</label>
+            <input type="text" name="" id="price" name="price" />
+        </div>
+        <div class="flex">
+            <button onclick="handelSave()">Save</button><button onclick="handelAdd()">Cancel</button>
+        </div>
+    </div>
+
+    <!-- Form Sign -->
+    <form id="formSign" class="animate">
+        <h3 class="titleforAdd">LOGIN</h3>
+        <i class='bx bx-x' onclick="handelSign()"></i>
+        <div class="gird_1">
+            <input type="text" name="" id="email" name="email"  placeholder="Email" required/>
+        </div>
+        <div class="gird_1">
+            <input type="password" name="" id="password" name="name"  placeholder="Password" required/>
+        </div>
+        <p>Forgot password</p>
+        <div class="gird_1">
+            <input type="submit" name="" id="btnLogin" name="button" value="Login" />
+        </div>
+        <p>Dont't have an account? <input type="button" name="" id="btnhandleSignUp" value="Signup" onclick="ShowsignUp()"></p>
+    </form>
+
+    
+    <!-- Form Up -->
+    <form id="formUp" class="animate">
+        <h3 class="titleforAdd">SignUp</h3>
+        <i class='bx bx-x' onclick="ShowsignUp()"></i>
+        <div class="gird_2">
+            <input type="text" name="" id="email" name="image"  placeholder="Email" required/>
+            <p class="error" id="error-email"></p>
+        </div>
+        <div class="gird_2">
+            <input type="password" name="" id="password" name="name"  placeholder="Password" required/>
+            <p class="error" id="error-password"></p>
+        </div>
+        <div class="gird_2">
+            <input type="password" name="" id="repeatpassword" name="name"  placeholder="Repeat Password" required/>
+            <p class="error" id="error-repeat-password"></p>
+        </div>
+        <div class="gird_2">
+            <button type="submit" name="" id="btnSignup" name="button">SignUp</button>
+        </div>
+    </form>
+    <!-- Form Content Object -->
+    <div class="content">
+        <div class="formContent">
+        </div>
+    </div>
+    <script src="db.js"></script>
+    <script src="admin.js"></script>
+</body>
+
+</html>
