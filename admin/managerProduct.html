@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Jayden Admin</title>
+    <link rel="icon" href="../image/icon/icon-logo.png"> <!-- boottrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <!-- fonticon-ansome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="./css/styles.css" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="d-flex" id="wrapper">
+        <!-- Sidebar-->
+        <div class="border-end" id="sidebar-wrapper">
+            <div class="sidebar-heading border-bottom bg-light">
+                <a href="/admin/index.html" class="logo">ADMIN</a>
+            </div>
+            <div class="list-group list-group-flush">
+                <a class="list-group-item list-group-item-action list-group-item-light p-3"
+                    href="./managerUser.html">User</a>
+                <a class="list-group-item list-group-item-action list-group-item-light p-3"
+                    href="./managerProduct.html">Product</a>
+                <a class="list-group-item list-group-item-action list-group-item-light p-3"
+                    href="./managerOder.html">Oder</a>
+            </div>
+        </div>
+        <!-- Page content wrapper-->
+        <div id="page-content-wrapper">
+            <!-- Top navigation-->
+            <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+                <div class="container-fluid">
+                    <button class="fa-solid fa-rectangle-list" id="sidebarToggle"></button>
+                    <button class="fa-solid fa-arrow-right-to-bracket btn-user text-primary" onclick="handelUser()"></button>
+                    <button class="btn-add" onclick="handelAdd()">ADD</button>
+                    <div class="item-search">
+                        <input placeholder="Tìm Kiếm" oninput="objectSearch(this.value)">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <div class="icon-right">
+                        <i class="fa-duotone fa-user-secret"></i>
+                    </div>
+
+                </div>
+            </nav>
+            <!-- Page content-->
+            <div>
+                <h3 class="text-center pt-2">PRODUCT SHOES</h3>
+            </div>
+            <table class="table">
+                <thead class="table-dark">
+                    <tr class="text-center">
+                        <th>#</th>
+                        <th colspan="3">Thông tin</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody class="content-product">
+                    <!-- <tr>
+                        <td class="text-center pt-4">1</td>
+                        <td><img src="/image/shoe-men-4.jpg" alt=""></td>
+                        <td class="pt-4"><b>Tên sản phẩm: </b> <span>Nike Air Max</span></td>
+                        <td class="pt-4"><b>Phân loại: </b> <span>Nike Air Max</span></td>
+                        <td class="pt-4"><b>Giá: </b> <span>Nike Air Max</span></td>
+                        <td class="text-center pt-4">
+                            <button>Edit</button>
+                            <button>Delete</button>
+                        </td>
+                    </tr> -->
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Form Create -->
+        <div id="formAdd" class="animate">
+            <h3 class="titleforAdd">THÊM SẢN PHẨM</h3>
+            <div class="gird">
+                <input type="number" name="" id="id" name="id" style="width: 40px;" hidden />
+            </div>
+            <div class="gird">
+                <label for="">Hình ảnh sản phẩm:</label>
+                <input type="file" name="" id="image" name="image" />
+            </div>
+            <div class="gird">
+                <label for="">Tên sản phẩm:</label>
+                <input type="text" name="" id="name" name="name" />
+            </div>
+
+            <div class="gird">
+                <label for="">Phân loại:</label>
+                <input type="text" name="" id="classify" name="classify" />
+            </div>
+
+            <div class="gird">
+                <label for="">Giá sản phẩm:</label>
+                <input type="text" name="" id="price" name="price" />
+            </div>
+            <div class="flex">
+                <button onclick="handelSave()">Save</button><button onclick="handelAdd()">Cancel</button>
+            </div>
+        </div>
+
+        <!-- Form Edit -->
+        <div id="formEdit" class="animate">
+            <h3 class="titleforAdd">CHỈNH SỬA SẢN PHẨM</h3>
+            <div class="gird">
+                <input type="number" name="" id="idEdit" name="id" style="width: 40px;" hidden />
+            </div>
+            <div class="gird">
+                <label for="">Hình ảnh sản phẩm:</label>
+                <input type="file" name="" id="imageEdit" name="image" />
+            </div>
+            <div class="gird">
+                <label for="">Tên sản phẩm:</label>
+                <input type="text" name="" id="nameEdit" name="name" />
+            </div>
+
+            <div class="gird">
+                <label for="">Phân loại:</label>
+                <input type="text" name="" id="classifyEdit" name="classify" />
+            </div>
+
+            <div class="gird">
+                <label for="">Giá sản phẩm:</label>
+                <input type="text" name="" id="priceEdit" name="price" />
+            </div>
+            <div class="flex">
+                <button onclick="handelUpdate()">Update</button><button onclick="handleEdit()">Cancel</button>
+            </div>
+        </div>
+
+    </div>
+    <!-- Bootstrap core JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Core theme JS-->
+    <script src="/admin/js/managerProduct.js"></script>
+    <script src="/admin/js/scripts.js"></script>
+    <script src="/db.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

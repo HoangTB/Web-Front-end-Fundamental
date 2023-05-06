@@ -1,0 +1,242 @@
+@charset "UTF-8";
+
+.item-search {
+  position: relative;
+  margin: 0.3rem;
+}
+
+.item-search  input {
+    width: 40rem;
+    height: 40px;
+    border: none;
+    border-radius: 5px;
+    padding-left: 10px;
+    box-shadow: 1px 1px 5px rgb(214, 211, 211);
+}
+
+.item-search i {
+  position: absolute;
+  top: 0.8rem;
+  right: 1rem;
+  cursor: pointer;
+}
+
+.sidebar-heading .logo {
+  font-size: 1.5rem;
+  font-weight: bolder;
+  color: var(--black);
+  text-decoration: none;
+}
+.container-fluid .fa-solid {
+  font-size: 30px;
+  color: rgb(0, 0, 0);
+  border: none;
+  background-color: rgb(255, 255, 255);
+}
+.container-fluid{
+  justify-content: space-between;
+}
+.btn-add{
+  width: 200px;
+  height: 45px;
+  border-radius: 10px;
+  border: none;
+  box-shadow: 1px 1px 5px rgb(187, 185, 185);
+  font-weight: bolder;
+}
+
+td img {
+  width: 70px;
+}
+
+td button{
+  width: 100px;
+  height: 35px;
+  border: none;
+  border-radius: 5px;
+
+}
+
+td button:hover ,  .btn-add:hover{
+  background-color: red;
+  color: white;
+}
+
+.image-box{
+  position: relative;
+}
+.content-image{
+  position: absolute;
+  top: 500px;
+  left: 400px;
+  color: rgba(255, 255, 255, 0.8);
+
+}
+
+.image-box img{
+  width: 100%;
+}
+
+.content-image h3 {
+  font-size: 100px;
+  font-family: 'Alfa Slab One';
+  font-weight: bolder;
+  letter-spacing: 10px;
+}
+
+.user-email{
+  font-size: 17px;
+  font-style: italic;
+  border: none;
+  background-color: white;
+  color: rgb(253, 3, 3);
+  
+}
+.btn-logout{
+  font-size: 15px;
+  font-style: italic;
+  text-align: center;
+  padding-top: 2px;
+  border: none;
+  width: 90px;
+  height: 30px;
+  color:white;
+  background: rgb(141, 139, 139);
+  font-family:Arial, Helvetica, sans-serif;
+}
+
+i{
+  cursor: pointer;
+}
+
+
+/* Form Add Edit */
+
+#formAdd, #formEdit{
+  font-size: 18px;
+  font-style: italic;
+  width: 900px;
+  height: 400px;
+  position: fixed;
+  background-color: rgba(8, 8, 8, 0.8);
+  color: #ffffff;
+  /* margin-left: 500px;
+  margin-top: 200px; */
+  top: 200px;
+  left: 520px;
+  display: none;
+  z-index: 1;
+}
+
+#formAdd > .gird, #formEdit > .gird {
+  display: grid;
+  grid-template-columns: 40% 50%;
+  gap: 20px;
+  padding: 10px 0px;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.flex> button {
+  height: 30px;
+  width: 100px;
+}
+.flex{
+  display: flex;
+  justify-content:space-evenly;
+  padding: 10px;
+}
+
+.titleforAdd{
+  text-align: center;
+}
+
+.flex button{
+  width: 150px;
+  height: 40px;
+  border-radius: 10px;
+  border: none;
+}
+
+.flex button:hover{
+  background-color: rgb(218, 36, 36);
+  color: white;
+}
+.titleforAdd{
+  padding-top: 35px;
+}
+
+
+
+   /* Add Zoom Animation */
+   .animate {
+    -webkit-animation: animatezoom 0.4s;
+    animation: animatezoom 0.5s;
+  }
+  .gird_2{
+    color: red;
+    font-style: italic;
+    font-size: 12px;
+  }
+
+  @-webkit-keyframes animatezoom {
+    from {
+      -webkit-transform: scale(0);
+    }
+    to {
+      -webkit-transform: scale(1);
+    }
+  }
+
+  @keyframes animatezoom {
+    from {
+      transform: scale(0);
+    }
+    to {
+      transform: scale(1);
+    }
+  }
+
+
+@media (prefers-reduced-motion: no-preference) {
+  :root {
+    scroll-behavior: smooth;
+  }
+}
+
+#wrapper {
+  overflow-x: hidden;
+}
+
+#sidebar-wrapper {
+  min-height: 100vh;
+  margin-left: -15rem;
+  transition: margin 0.25s ease-out;
+}
+
+#sidebar-wrapper .sidebar-heading {
+  padding: 0.875rem 1.25rem;
+  font-size: 1.2rem;
+}
+
+#sidebar-wrapper .list-group {
+  width: 15rem;
+}
+
+.text-center th {
+  border: 2px solid white;
+}
+
+@media (min-width: 768px) {
+  #sidebar-wrapper {
+    margin-left: 0;
+  }
+  #page-content-wrapper {
+    min-width: 0;
+    width: 100%;
+  }
+  body.sb-sidenav-toggled #wrapper #sidebar-wrapper {
+    margin-left: -15rem;
+  }
+}

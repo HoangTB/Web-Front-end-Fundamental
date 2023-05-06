@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+        crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Noto+Sans+Mono:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="icon" href="../image/icon/icon-logo.png">
+    <title>Jayden Sneaker</title>
+</head>
+
+<body>
+    <div class="navibar">
+        <div class="logo-left">
+            <a href="/index.html"><img src="../image/icon/icon-logo.png" alt=""></a>
+        </div>
+
+        <div class="navi-center ">
+            <ul class="nav nav-underline">
+                <li class="nav-item"><a href="#best" class="nav-link">best of jayden</a></li>
+                <li class="nav-item"><a id="list-nam" class="nav-link" href="#h3">nam</a></li>
+                <li class="nav-item"><a id="list-nu" class="nav-link" href="#h3">nữ</a></li>
+                <li class="nav-item"><a id="list-kit" class="nav-link" href="#h3">trẻ em</a></li>
+                <li class="nav-item"><a href="#sale" class="nav-link">sale</a></li>
+            </ul>
+        </div>
+
+        <div class="menu-right">
+            <div class="right-search">
+                <input type="text" placeholder="tìm kiếm ...">
+                <i class="fa-solid fa-magnifying-glass fa-fade"></i>
+            </div>
+            <i class="fa-solid fa-user fa-fade i-user" onclick="handelLogin()"></i>
+            <i class="fa-sharp fa-solid fa-bag-shopping fa-fade position-relative" onclick="handelCarts()"><span
+                    class="position-absolute">0</span></i>
+        </div>
+        <i class="fa-solid fa-list" onclick="handelList()"></i>
+    </div>
+    <div class="container-image">
+        <div id="carouselExampleFade" class="carousel slide carousel-fade">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <video muted autoplay loop>
+                        <source src="../video/pexels-cottonbro-studio-6764720-2048x1080-25fps.mp4" type="video/mp4">
+                    </video>
+                    <div class="caption caption-image-1">
+                        <h1>JAYDEN SNEAKER</h1>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <video muted autoplay loop>
+                        <source src="../video/pexels-cottonbro-studio-6153585-2048x1080-25fps.mp4" type="video/mp4">
+                    </video>
+                    <div class="caption caption-image-2">
+                        <h1>JAYDEN SNEAKER</h1>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <video muted autoplay loop>
+                        <source src="../video/pexels-cottonbro-studio-9488549-2048x1080-25fps.mp4" type="video/mp4">
+                    </video>
+                    <div class="caption caption-image-3">
+                        <h1>JAYDEN SNEAKER</h1>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>
+    <div class="container box-shoes">
+        <figcaption class="content-caption">
+            <p>MembersWeek</p>
+            <h3>TƯNG BỪNG TUẦN LỄ MEMBERS WEEK</h3>
+            <p>Sản phẩm độc đáo, giải thưởng đặc biệt & sự kiện chỉ giành riêng cho hội viên adiClub. Xem thêm điều
+                khoản.</p>
+            <button>Tìm hiểu thêm</button>
+        </figcaption>
+        <section class="list-image">
+            <div class="row row-cols-1 row-cols-md-3">
+                <div class="col col-men">
+                    <a href="">
+                        <div class="card h-100">
+                            <img src="../image/pexels-ryan-hiebendahl-9801650.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">MEN</h5>
+                                <p class="card-text"></p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col col-woman">
+                    <a href="">
+                        <div class="card h-100">
+                            <img src="../image/pexels-cottonbro-studio-4570754.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">WOMAN</h5>
+                                <p class="card-text"></p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col col-kits">
+                    <a href="">
+                        <div class="card h-100">
+                            <img src="../image/pexels-amina-filkins-5559986.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">KITS</h5>
+                                <p class="card-text"></p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </div>
+    <hr class="container accessory">
+    <div class="container list-shoes">
+        <div class="content-h3">
+        <h3 id="h3">TẤT CẢ SẢN PHẨM</h3>
+        </div>
+        <nav aria-label="Page navigation example">
+            <ul class="pagination">
+                <li class="page-item">
+                    <a class="page-link" href="#" aria-label="Previous">
+                        <span aria-hidden="true">&laquo;</span>
+                    </a>
+                </li>
+                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item">
+                    <a class="page-link" href="#" aria-label="Next">
+                        <span aria-hidden="true">&raquo;</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <div class="row row-cols-1 row-cols-md-4 g-4 tableRender">
+            <div class="col">
+                <div class="card shoes-list">
+                    <img src="../image/shoe-men-1.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <div>
+                            <p class="card-text fw-light fs-5">Nike Court Vision Low</p>
+                            <p class="card-text fst-italic">Men's Shoes</p>
+                            <p class="card-text">$86.00</p>
+                        </div>
+                        <div class="icon-carts">
+                            <i class="fa-solid fa-cart-plus"></i>
+                        </div>
+                        <div class="icon-detail">
+                            <i class="fa-regular fa-magnifying-glass-plus"></i> 
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="container-image-2">
+        <div class="box-image">
+            <div class="box-image-1">
+                <div class="box-image-small">
+                    <img src="../image/pexels-jonathon-burton-2588432.jpg" alt="">
+                </div>
+                <div class="box-image-small">
+                    <img src="../image/pexels-jd-danny-2385477.jpg" alt="">
+                </div>
+            </div>
+            <div class="box-image-2">
+                <div class="box-image-small">
+                    <img src="../image/pexels-hamza-nouasria-12628400.jpg" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container best-shoes">
+        <h4 id="best">BEST OF JAYDEN</h4>
+        <div class="row row-cols-1 row-cols-md-6 g-4 tableRender-best">
+        </div>
+    </div>
+    <div class="container sale-shoes">
+        <h4 id="sale">SALE'S</h4>
+        <div class="row row-cols-1 row-cols-md-6 g-4 tableRender-sale">
+            <div class="col">
+                <div class="card shoes-list-sale">
+                    <img src="/image/shoe-men-4.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <div class="shoes-list-1 shoes-best-sale">
+                            <p class="card-text fw-light">aaaa</p>
+                            <p class="card-text fst-italic">aa</p>
+                            <p class="card-text">aaaa</p>
+                        </div>
+                        <div class="icon-carts">
+                            <i class="fa-solid fa-cart-plus"></i>
+                        </div>
+                    </div>
+                    <span class="onsale">Sale!</span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="container notify">
+        <div class="notify-content shipping-1">
+            <div class="icon-i">
+                <i class="fa-solid fa-truck-fast fa-fade"></i>
+            </div>
+            <div>
+                <h5>Free Shipping</h5>
+                <p>On All Orders Over $75.00</p>
+            </div>
+        </div>
+        <div class="notify-content shipping-2">
+            <div class="icon-i">
+                <i class="fa-solid fa-right-left fa-fade"></i>
+            </div>
+            <div>
+                <h5>Free Returns</h5>
+                <p>Returns Are Free Within 9 Days</p>
+            </div>
+        </div>
+        <div class="notify-content shipping-3">
+            <div class="icon-i">
+                <i class="fa-sharp fa-solid fa-headset fa-fade"></i>
+            </div>
+            <div>
+                <h5>Support 24/7</h5>
+                <p>Contact Us 24 Hours A Day</p>
+            </div>
+        </div>
+        <div class="notify-content shipping-4">
+            <div class="icon-i">
+                <i class="fa-solid fa-money-check-dollar fa-fade"></i>
+            </div>
+            <div>
+                <h5>100% Payment Secure</h5>
+                <p>Your Payment Are Safe With Us.</p>
+            </div>
+        </div>
+    </div>
+    <div class="container content-footer">
+        <h4>Báo tin tức</h4>
+        <div class="row row-cols-1 row-cols-md-2 g-4">
+            <div class="col">
+                <div class="card spaper">
+                    <img src="../image/Bill-Bowerman-and-Phil-Knight-9174-6445-1677339846.jpg" class="card-img-top"
+                        alt="...">
+                    <div class="card-body-spaper">
+                        <p class="card-title-spaper">Nike - hãng giày ra đời từ bài luận trong trường đại học</p>
+                        <p class="card-text fw-light"><a
+                                href="https://vnexpress.net/nike-hang-giay-ra-doi-tu-bai-luan-trong-truong-dai-hoc-4574888.html">Xem
+                                thêm</a></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card spaper">
+                    <img src="../image/giay-phan-huy-sinh-hoc-9095-1660877687.jpg" class="card-img-top" alt="...">
+                    <div class="card-body-spaper">
+                        <p class="card-title-spaper">Trung Quốc phát triển giày phân hủy sinh học</p>
+                        <p class="card-text fw-light"><a
+                                href="https://vnexpress.net/trung-quoc-phat-trien-giay-phan-huy-sinh-hoc-4501383.html">Xem
+                                thêm</a></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card spaper">
+                    <img src="../image/shutterstock-1099735934-6289-1574845586.jpg" class="card-img-top" alt="...">
+                    <div class="card-body-spaper">
+                        <p class="card-title-spaper">Cách chọn giày chạy bộ</p>
+                        <p class="card-text fw-light"><a
+                                href="https://vnexpress.net/cach-chon-giay-chay-bo-4017726.html">Xem thêm</a></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card spaper">
+                    <img src="../image/mui-hoi-4-1648350134-1795-1648351426.jpg" class="card-img-top" alt="...">
+                    <div class="card-body-spaper">
+                        <p class="card-title-spaper">5 nguyên liệu quen thuộc xử lý mùi hôi giày</p>
+                        <p class="card-text fw-light"><a
+                                href="https://vnexpress.net/5-nguyen-lieu-quen-thuoc-xu-ly-mui-hoi-giay-4443942.html">Xem
+                                thêm</a></p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <button id="myBtn" title="Back on top"><img src="./image/icon/return-to-the-top-14.png" title='Back on top' width='50px'/></button>
+
+    <footer>
+        <div class="content-footer footer-left">
+            <ul>
+                <li>FIND A STORE</li>
+                <li>BECOME A MEMBER</li>
+                <li>SIGN UP FOR EMAIL</li>
+                <li>Send Us Feedback</li>
+            </ul>
+        </div>
+        <div class="content-footer footer-center-1">
+            <ul>
+                <li>GET HELP</li>
+                <li>Order Status</li>
+                <li>Delivery</li>
+                <li>Returns</li>
+                <li>Payment Options</li>
+                <li>Contact Us</li>
+            </ul>
+        </div>
+        <div class="content-footer footer-center-2">
+            <ul>
+                <li>ABOUT NIKE</li>
+                <li>News</li>
+                <li>Careers</li>
+                <li>Investors</li>
+                <li>Sustainability</li>
+            </ul>
+        </div>
+        <div class="content-footer footer-right">
+            <ul>
+                <li><i class="fa-brands fa-twitter"></i></li>
+                <li><i class="fa-brands fa-facebook"></i></li>
+                <li><i class="fa-brands fa-instagram"></i></li>
+                <li><i class="fa-brands fa-line"></i></li>
+                <li><i class="fa-brands fa-tiktok"></i></li>
+            </ul>
+        </div>
+        <div class="content-footer map">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3833.7699680130695!2d108.21785398496668!3d16.07742239953558!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3142183a597c954d%3A0x27d2bd48ecfbd0f1!2zVHJ1bmcgdMOibSBIw6BuaCBjaMOtbmggVGjDoG5oIHBo4buRIMSQw6AgTuG6tW5n!5e0!3m2!1svi!2s!4v1682822064180!5m2!1svi!2s"
+                style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </footer>
+    <script src="/index.js"></script>
+    <script src="/db.js"></script>
+    <!-- <script src="./user/deitail.js"></script> -->
+    <!-- <script src="/user/login-register.js"></script> -->
+    <!-- <script src="/user/carts.js"></script> -->
+</body>
+
+</html>
