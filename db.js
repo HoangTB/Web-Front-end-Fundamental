@@ -8,7 +8,9 @@ const listShoses = [
     image3: "../image/adidas-cloudfoam/cloudfoam-4.jpg",
     name : "Grand Cloufoam",
     classify :"Giày Nam",
+    pricesale : 1450000,
     price : 1250000,
+    inCart: 0,
 },
 {   
     id: 2,
@@ -19,6 +21,7 @@ const listShoses = [
     name : "Cổ thấp Forum",
     classify :"Giày Nam",
     price : 1390000,
+    inCart: 0,
 },
 {   
     id: 3,
@@ -28,7 +31,9 @@ const listShoses = [
     image3: "../image/adidas-lte/lte-4.jpg",
     name : "Lite Racer",
     classify :"Giày Nam",
+    pricesale : 1490000,
     price : 1290000,
+    inCart: 0,
 },
 {   
     id: 4,
@@ -39,6 +44,7 @@ const listShoses = [
     name : "NMD_R1 Primeblue",
     classify :"Giày Nam",
     price : 1450000,
+    inCart: 0,
 },
 {   
     id: 5,
@@ -48,7 +54,9 @@ const listShoses = [
     image3: "../image/adidas-superstar/superstar-4.jpg",
     name : "Superstar 001",
     classify :"Giày Nam",
-    price : 1150000,   
+    pricesale : 1350000,  
+    price : 1150000,
+    inCart: 0,
 },
 // women
 
@@ -60,7 +68,9 @@ const listShoses = [
     image3: "../image/adidas-cloudfoam/cloudfoam-d.jpg",
     name : "Continental 80",
     classify :"Giày Nữ",
-    price : 1230000, 
+    pricesale : 1480000, 
+    price: 1230000,
+    inCart: 0,
 },
 {
     id: 7,
@@ -71,6 +81,7 @@ const listShoses = [
     name : "Platform Nizza",
     classify :"Giày Nữ",
     price : 1550000,
+    inCart: 0,
 },
 {   
     id: 8,
@@ -81,6 +92,7 @@ const listShoses = [
     name : "Campus 001s",
     classify :"Giày Nữ",
     price : 1390000,
+    inCart: 0,
 },
 {
     id: 9,
@@ -90,7 +102,9 @@ const listShoses = [
     image3: "../image/adidas-nmd/nmd-d.jpg",
     name : "Stan Smith Lux",
     classify :"Giày Nữ",
+    pricesale : 1490000,
     price : 1190000,
+    inCart: 0,
 },
 {
     id: 10,
@@ -101,6 +115,7 @@ const listShoses = [
     name : "Superstar Milencon",
     classify :"Giày Nữ",
     price : 1430000,
+    inCart: 0,
 },
 
 // Kiss
@@ -114,6 +129,7 @@ const listShoses = [
     name : "Buộc giây Bounce",
     classify :"Giày Trẻ Em",
     price : 1620000,
+    inCart: 0,
 },
 {   
     id: 12,
@@ -124,6 +140,7 @@ const listShoses = [
     name : "FortaRun 2.0",
     classify :"Giày Trẻ Em",
     price : 1370000,
+    inCart: 0,
 },
 {  
     id: 13,
@@ -134,6 +151,7 @@ const listShoses = [
     name : "Tenis Lace-Up",
     classify :"Giày Trẻ Em",
     price : 1570000,
+    inCart: 0,
 },
 {   
     id: 14,
@@ -144,6 +162,7 @@ const listShoses = [
     name : "Adidas x LEGO",
     classify :"Giày Trẻ Em",
     price : 1430000,
+    inCart: 0,
 },
 {
     id: 15,
@@ -153,7 +172,9 @@ const listShoses = [
     image3: "../image/adidas-superstar/superstar-h.jpg",
     name : "Grand Court 002",
     classify :"Giày Trẻ Em",
+    pricesale : 1450000,
     price : 1320000,
+    inCart: 0,
 },
 ];
 

@@ -192,9 +192,11 @@ html{
 
 }
 .box-image{
+    margin: auto;
     display: grid;
-    grid-template-columns: 60% 39%;
-    gap: 10px;
+    grid-template-columns: 59% 38%;
+    gap: 20px;
+    justify-content: center;
  
 
 }
@@ -203,12 +205,14 @@ html{
 .box-image-1{
     height: 100%;
     display: grid;
-    gap: 10px;
+    gap: 20px;
+ 
    
 }
 .box-image-2{
     height: 100%;
     display: flex;
+    align-items: center;
 
 }
 .box-image-small img {
@@ -305,7 +309,7 @@ footer ul {
 }
 
 .box-image-small:hover{
-    transform: scale(0.8);
+    transform: scale(1.02);
     transition: 0.5s;
 }
 
@@ -373,7 +377,14 @@ iframe{
 i{
     cursor: pointer;
   }
-  
+
+  #h3, #bao, #best, #sale {
+    font-family: 'Alfa Slab One';
+  }
+  .col-men:hover, .col-woman:hover, .col-kits:hover {
+    transform: scale(1.05);
+    transition: 0.5s;
+  }
 
   /* Mui ten lên dau trang */
 #myBtn {

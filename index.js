@@ -30,6 +30,7 @@ function renderHeader() {
 } renderHeader();
 
 
+
 //Render lại khi đăng nhập thành công trang ADMIN
 // let objectAdmin = JSON.parse(localStorage.getItem("Admin"));
 // console.log(objectAdmin);
@@ -124,7 +125,7 @@ function renderData(objectDB) {
         `;
 
         }
-        if(object.price < 1350000){
+        if(object.pricesale != null){
 
             contentShosesSale += `
             <div class="col">
@@ -134,7 +135,7 @@ function renderData(objectDB) {
                     <div class="shoes-list-1 shoes-best-sale">
                         <p class="card-text fw-light">${object.name}</p>
                         <p class="card-text fst-italic">${object.classify}</p>
-                        <p class="text-decoration-line-through text-danger">1650000 VND</p>
+                        <p class="text-decoration-line-through text-danger">${object.pricesale} VND</p>
                         <p class="card-text">${object.price} VND</p>
                     </div>
 
@@ -155,6 +156,8 @@ function renderData(objectDB) {
     shosesSale.innerHTML = contentShosesSale;
 }
 
+
+
 // Hiện menu List
 function handelList() {
     const showList = document.querySelector(".navi-center");
@@ -170,8 +173,11 @@ function handelList() {
 // Đăng xuất
 function handelLogout() {
     localStorage.removeItem("User");
+
     alert("Bạn có muốn đăng xuất tài khoản này?")
+    
     window.location = '/';
+
 }
 
 // Tạo ID cho ảnh
@@ -212,7 +218,7 @@ document.getElementById('list-nam').addEventListener("click", function () {
                 let renderShoses = "";
                 renderH3+= `
                 <div class="content-h3">
-                <h3 id="h3">GIÀY NAM</h3>
+                <h3 id="h3">_GIÀY NAM_</h3>
                 </div> `;
                 listNam.forEach(object => {
                     if(object.classify === "Giày Nam"){
@@ -260,7 +266,7 @@ document.getElementById('list-nu').addEventListener("click", function () {
                 let renderShoses = "";
                 renderH3+= `
                 <div class="content-h3">
-                <h3 id="h3">GIÀY NỮ</h3>
+                <h3 id="h3">_GIÀY NỮ_</h3>
                 </div> `;
                 listNam.forEach(object => {
                     if(object.classify === "Giày Nữ"){
@@ -308,7 +314,7 @@ document.getElementById('list-kit').addEventListener("click", function () {
                 let renderShoses = "";
                 renderH3+= `
                 <div class="content-h3">
-                <h3 id="h3">GIÀY TRẺ EM</h3>
+                <h3 id="h3">_GIÀY TRẺ EM_</h3>
                 </div> `;
                 listNam.forEach(object => {
                     if(object.classify === "Giày Trẻ Em"){
@@ -338,3 +344,13 @@ document.getElementById('list-kit').addEventListener("click", function () {
         }
     })
 });
+
+
+// Render để không mất số trên thanh Bag
+function renderCartNumber() {
+    let productNumber = localStorage.getItem("cartNumber");
+    if (productNumber) {
+        document.querySelector(".position-absolute").textContent = productNumber;
+    }
+}
+renderCartNumber();
