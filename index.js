@@ -93,7 +93,7 @@ function renderData(objectDB) {
             <div class="shoes-list-1 shoes-best-sale">
                 <p class="card-text fw-light fs-4">${object.name}</p>
                 <p class="card-text fst-italic">${object.classify}</p>
-                <p class="card-text">${object.price} VND</p>
+                <p class="card-text">${object.price.toLocaleString("de-DE")} VND</p>
             </div>
             <div class="icon-carts" onclick="handelDetail('${object.id}')">
             <i class="fa-solid fa-magnifying-glass-plus search-lop"></i>
@@ -111,10 +111,10 @@ function renderData(objectDB) {
             <div class="shoes-list-1 shoes-best-sale">
                 <p class="card-text fw-light">${object.name}</p>
                 <p class="card-text fst-italic">${object.classify}</p>
-                <p class="card-text">${object.price} VND</p>
+                <p class="card-text">${object.price.toLocaleString("de-DE")} VND</p>
             </div>
             <div class="icon-carts">
-                <i class="fa-solid fa-heart"></i>
+                <i class="fa-solid fa-heart text-danger"></i>
             </div>
             <div class="icon-carts" onclick="handelDetail('${object.id}')">
             <i class="fa-solid fa-magnifying-glass-plus search-lop"></i>
@@ -135,12 +135,13 @@ function renderData(objectDB) {
                     <div class="shoes-list-1 shoes-best-sale">
                         <p class="card-text fw-light">${object.name}</p>
                         <p class="card-text fst-italic">${object.classify}</p>
-                        <p class="text-decoration-line-through text-danger">${object.pricesale} VND</p>
-                        <p class="card-text">${object.price} VND</p>
+                        <p class="text-decoration-line-through text-danger">${object.pricesale.toLocaleString("de-DE")} VND</p>
+                        <p class="card-text">${object.price.toLocaleString("de-DE")} VND</p>
                     </div>
 
                 </div>
-                <span class="onsale">Sale!</span>
+         
+                <span class="onsale fa-beat-fade">Sale!</span>
                 <div class="icon-carts" onclick="handelDetail('${object.id}')">
                 <i class="fa-solid fa-magnifying-glass-plus search-lop"></i>
                 </div>

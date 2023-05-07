@@ -1,7 +1,9 @@
 
 
 /*  */
-
+*{
+	font-family: 'Noto Sans Mono', monospace;
+}
 .shopping-cart{
 	padding: 100px;
 	background-color: rgba(208, 208, 245, 0.3);
@@ -113,7 +115,21 @@
 	margin-top: 20px;
 }
 
+.content-total{
+	font-size: 20px;
+}
 
+.btn-cost {
+	width: 200px;
+	height: 50px;
+	background-color: rgb(184, 181, 181);
+	border: none;
+	
+}
+.btn-cost:hover{
+	background-color: red;
+	color: white;
+}
 
 @media (max-width:991px) {
     .image{

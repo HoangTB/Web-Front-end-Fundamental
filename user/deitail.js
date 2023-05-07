@@ -11,11 +11,15 @@ function RenderDetail() {
     let contentImage = "";
     Shoses.forEach(element => {
         if (element.id == id) {
+            let priceSale = element.pricesale ?? [] ;
             contentDetail += `
             <div class="content-detail">
             <h2 class="text-danger">${element.name}</h2>
             <h4 class="fst-italic">${element.classify}</h4>
-            <h6>${element.price} VND</h6>
+            <h6 class = "text-danger text-decoration-line-through"> ${priceSale.toLocaleString("de-DE")+" VND"}</h6>
+            <h6>${element.price.toLocaleString("de-DE")} VND</h6>
+
+           
         </div>
             `;
 
@@ -63,7 +67,7 @@ let userCart = localStorage.getItem("User");
 for (let i = 0; i < carts.length; i++) {
     carts[i].addEventListener("click", () => {
         if (userCart === null) {
-            alert("Mời bạn đăng nhập tài khoản !");
+            alert("Hãy đăng nhập tài khoản !");
             window.location = '/user/login-register.html';
         } else {
 

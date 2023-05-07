@@ -56,86 +56,16 @@ function cartNumber(listShoses) {
     document.querySelector(".fa-cart-plus").textContent = 1;
   }
 
-  setItems(product);
+  // setItems(product);
+  pushOnUser();
 }
 
-// function setItems(product) {
-//   let cartItem = localStorage.getItem("productsInCart");
-//   cartItem = JSON.parse(cartItem);
-//   if(cartItem != null) {
-//       if (cartItem[product.tag] == undefined) {
-//         cartItem = {
-//             ...cartItem,
-//             [product.tag]: product
-//         }
-//       }
-//       cartItem[product.tag].inCart += 1;
-//   } else {
-//     product.inCart = 1;
-//     cartItem = {
-//       [product.tag]: product
-//     }
-//   }
-//   localStorage.setItem("productsInCart",JSON.stringify(cartItem));
-// }
-
-// function totalcost(product) {
-//   let cartCost = localStorage.getItem("totalcost");
-
-//   if (cartCost != null) {
-//     cartCost = parseInt(cartCost);
-//     localStorage.setItem("totalcost",cartCost + product.price);
-//   } else {
-//     localStorage.setItem("totalcost",product.price);
-//   }
-
-// }
-
-// function displayCart() {
-//   let cartItems = localStorage.getItem("productsInCart");
-//   cartItems = JSON.parse(cartItems);
-
-//   let productContainer = document.querySelector(".products");
-//   let cartCost = localStorage.getItem("totalcost");
-//   if (cartItems && productContainer) {
-//     productContainer.innerHTML = "";
-//     Object.values(cartItems).map(item => {
-//         productContainer.innerHTML += `
-//            <div class="box-items">
-//                 <i class="fa-sharp fa-solid fa-circle-xmark"></i>
-//                 <img src="${item.tag}">
-//                 <span>${item.name}</span>
-//                 <div class="price">$${item.price}</div>
-//                 <div class="quantity">
-//                     <i class="fa-solid fa-backward-step"></i>
-//                     <span>${item.inCart}</span>
-//                     <i class="fa-solid fa-forward-step"></i>
-//                 </div>
-//                 <div class="total">$${item.inCart * item.price},00</div>
-//            </div>
-//         `;
-//     });
-//     productContainer.innerHTML += `
-//         <div class="basketTotalContainer">
-//             <h4 class="basketTotalTitle">
-//                 Basket Total
-//             </h4>
-//             <h4 class="basketTotal">
-//                 $${cartCost},00
-//             </h4>
-//         </div>
-//     `;
-//   }
-// }
-
-// displayCart();
-// onLoadCartNumber();
 renderCart();
 function renderCart() {
   let cartItems = JSON.parse(localStorage.getItem("ProductIncart"));
   let cartCost = localStorage.getItem("totalCost");
+  cartCost = parseInt(cartCost);
   let productNumber = localStorage.getItem("cartNumber");
-  console.log(cartItems);
   let productCart = document.querySelector(".items");
   let productTotal = document.querySelector(".total-Cart");
   let productCartContent = "";
@@ -143,22 +73,22 @@ function renderCart() {
   
   if(cartItems === null){
     productTotalContent += `
-    <div class="">
+    <div class="content-total">
       <h3>Total</h3>
        <div class=""><span class="text">Số lượng:</span><span
        class="price">0 Sản phẩm</span></div>
-        <div class=""><span class="text">Tổng số tiền:</span><span class="price">0 VND </span></div>
-         <button type="button" class="btn btn-secondary">Thanh Toán</button>
+        <div class=""><span class="text ">Tổng số tiền:</span><span class="price">0 VND </span></div>
+         <button type="button" class="btn-cost">Thanh Toán</button>
          </div>
 `;
   } else{
     productTotalContent += `
-    <div class="">
+    <div class="content-total">
       <h3>Total</h3>
        <div class=""><span class="text">Số lượng:</span><span
        class="price">${productNumber} Sản phẩm</span></div>
-        <div class=""><span class="text">Tổng số tiền:</span><span class="price">${cartCost} VND </span></div>
-         <button type="button" class="btn btn-secondary">Thanh Toán</button>
+        <div class=""><span class="text">Tổng số tiền:</span><span class="price">${cartCost.toLocaleString("de-DE")} VND </span></div>
+         <button type="button" class="btn-cost">Thanh Toán</button>
          </div>
 `;
   }
@@ -189,8 +119,8 @@ function renderCart() {
                           <input id="quantity" type="number" value="${item.inCart}"
                               class="form-control quantity-input">
                       </div>
-                      <div class="col-md-3 price">
-                          <span>${item.price} VND</span>
+                      <div class="col-md-3 price fw-bold">
+                          <span>${item.price.toLocaleString("de-DE")} VND</span>
                       
                       </div>
                
@@ -209,4 +139,10 @@ function renderCart() {
   }
   productCart.innerHTML = productCartContent;
   productTotal.innerHTML = productTotalContent;
+}
+// Push carts vào dữ liệu
+
+function pushOnUser(){
+  let cartNumber = JSON.parse(localStorage("cartNumber"));
+  console.log(cartNumber);
 }

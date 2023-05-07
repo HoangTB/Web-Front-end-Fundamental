@@ -105,26 +105,26 @@ html{
 .caption{
     position: absolute;
     top: 460px;
-    left: 350px;
+    left: 290px;
 
 }
 .caption-image-1 h1{
     font-size: 80px;
     font-family: 'Alfa Slab One';
-    letter-spacing: 30px;
+    letter-spacing: 40px;
     color: rgb(37, 36, 36);
 }
 .caption-image-2 h1{
     font-size: 80px;
     font-family: 'Alfa Slab One';
-    letter-spacing: 30px;
+    letter-spacing: 40px;
     color: rgb(243, 195, 195);
 }
 
 .caption-image-3 h1{
     font-size: 80px;
     font-family: 'Alfa Slab One';
-    letter-spacing: 30px;
+    letter-spacing: 40px;
     color: rgb(150, 194, 116);
 }
 
@@ -273,6 +273,7 @@ html{
     color: white;
     text-align: center;
     padding-top: 6px;
+  
 
 }
 .fa-heart{
@@ -438,6 +439,7 @@ i{
 
     .caption h1 {
         font-size: 40px;
+        letter-spacing: 20px;
     }
 
  
@@ -504,7 +506,7 @@ i{
     }
 
     .caption h1 {
-        font-size: 20px;
+        display: none;
     }
     .caption p {
         font-size: 10px;
@@ -549,4 +551,5 @@ i{
      .card-body-spaper{
         font-size: 10px;
      }
+
 }
