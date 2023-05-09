@@ -48,6 +48,7 @@ formSignUp.addEventListener("submit", (e) => {
         email: e.target[0].value.trim().toLowerCase(),
         password: e.target[1].value.trim(),
         repeatPassword: e.target[2].value.trim(),
+        active: true,
     };
 
     const checkValidator = validator(signUpInfo);
@@ -105,6 +106,8 @@ formSignUp.addEventListener("submit", (e) => {
 // B1. Lấy element của form
 const objectUser = JSON.parse(localStorage.getItem("Acount")) || [];
 const formElement = document.querySelector("#formSignIn");
+const HistoryCart = JSON.parse(localStorage.getItem("HistoryCart"));
+const User = JSON.parse(localStorage.getItem("User"));
 
 // B2. Lắng nghe sự kiện submit
 formElement.addEventListener("submit", (event) => {
@@ -115,50 +118,42 @@ formElement.addEventListener("submit", (event) => {
     const user = {
         email: event.target[0].value.trim(), // trim() bỏ dấu space ở 2 bên giá trị
         password: event.target[1].value.trim(),
+
     };
-    console.log(user);
+
     let isLogin = false;
     // B4. So sánh user với dữ liệu
-    objectUser.forEach((item) => {
-        if (item.email === user.email && item.password === user.password) {
-            isLogin = true;
+    objectUser.forEach((item,index) => {
+        if (item.email === user.email && item.password === user.password && item.active === true) {
+      
             alert("Đăng nhập thành công");
             window.location = "../index.html";
             localStorage.setItem("User", JSON.stringify(user));
             renderHeader();
-            // function renderHeader() {
-
-            // }
             return;
         }
 
+        if(item.email === user.email && item.password === user.password && item.active === false){
+            isLogin = true;
+            alert("Tài khoản này đang bị khóa");
+            return;
+        }
     });
 
+
+
     if (!isLogin) {
-   
         if (user.email === "admin@gmail.com" && user.password === "admin") {
             alert("Tài khoản này sẽ đi đến trang ADMIN !");
             window.location = "/admin/index.html";
-
-
-            
             localStorage.setItem("Admin", JSON.stringify(user));
-        } else alert("Email hoặc mật khẩu không đúng");
-
-
+        } else{
+            alert("Tài khoản hoặc mật khẩu không đúng");
+        }
     }
+
+
 });
 
-
-    // const Admin = JSON.parse(localStorage.getItem("Admin"));
-    // const emailElement = document.querySelector(".email");
-    // const passwordElement = document.querySelector(".password");
-    // Admin.forEach(item => {
-
-    //     if (emailElement.value === item.email && passwordElement.value === item.password) {
-    //         window.location = "/admin/index.html";
-    //     }
-
-    // });
 
 

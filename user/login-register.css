@@ -180,6 +180,12 @@ a.google span{
     padding-top: 5px
 }
 
+.edit-User{
+    border: none;
+    background-color: black ;
+    color: white;
+}
+
 @media screen and (max-width: 400px) {
     .form{
         padding: 20px 10px;

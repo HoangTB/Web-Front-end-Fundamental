@@ -20,7 +20,7 @@ function renderHeader() {
         <input type="text" placeholder="tìm kiếm ...">
         <i class="fa-solid fa-magnifying-glass fa-fade"></i>
     </div>
-    <button class="user-email"><span class="text-black-50">Hi,</span>${objectUser.email.split("@")[0]}</button>
+    <button class="user-email" onclick="updateUser()"><span class="text-black-50">Hi,</span>${objectUser.email.split("@")[0]}</button>
     <button class="btn-logout" onclick="handelLogout()">Đăng Xuất</button>
     <i class="fa-sharp fa-solid fa-bag-shopping fa-fade position-relative" onclick="handelCarts()"><span
             class="position-absolute">0</span></i>
@@ -72,6 +72,11 @@ function handelCarts() {
     window.location = "../user/carts.html";
 }
 
+// Mở trang manager User
+function updateUser() {
+    window.location = "../user/updateUser.html";
+}
+
 
 // Lấy về
 let objectDB = JSON.parse(localStorage.getItem("Shoses"));
@@ -102,7 +107,7 @@ function renderData(objectDB) {
     </div>
     </div>
         `;
-        if(object.price > 1400000){
+        if (object.price > 1400000) {
             contentShosesBest += `
         <div class="col">
     <div class="card shoes-list">
@@ -125,7 +130,7 @@ function renderData(objectDB) {
         `;
 
         }
-        if(object.pricesale != null){
+        if (object.pricesale != null) {
 
             contentShosesSale += `
             <div class="col">
@@ -150,7 +155,7 @@ function renderData(objectDB) {
         </div>
             `;
         }
-       
+
     });
     shoses.innerHTML = contentShoses;
     shosesBest.innerHTML = contentShosesBest;
@@ -174,13 +179,15 @@ function handelList() {
 // Đăng xuất
 function handelLogout() {
     localStorage.removeItem("User");
+    localStorage.removeItem("cartNumber");
+    localStorage.removeItem("ProductIncart");
+    localStorage.removeItem("totalCost");
 
     alert("Bạn có muốn đăng xuất tài khoản này?")
-    
+
     window.location = '/';
 
 }
-
 // Tạo ID cho ảnh
 function handelDetail(id) {
     window.location = `./user/detail.html?id=${id}`;
@@ -217,14 +224,14 @@ document.getElementById('list-nam').addEventListener("click", function () {
 
                 let renderH3 = "";
                 let renderShoses = "";
-                renderH3+= `
+                renderH3 += `
                 <div class="content-h3">
                 <h3 id="h3">_GIÀY NAM_</h3>
                 </div> `;
                 listNam.forEach(object => {
-                    if(object.classify === "Giày Nam"){
+                    if (object.classify === "Giày Nam") {
 
-                        renderShoses+= `
+                        renderShoses += `
                         <div class="col">
                         <div class="card shoes-list">
                             <img src="${object.image}" class="card-img-top" alt="...">
@@ -242,8 +249,8 @@ document.getElementById('list-nam').addEventListener("click", function () {
                         </div>`;
                     }
                 })
-                   contentShoses.innerHTML = renderShoses;
-                    contentH3.innerHTML = renderH3;
+                contentShoses.innerHTML = renderShoses;
+                contentH3.innerHTML = renderH3;
 
             }
         }
@@ -265,14 +272,14 @@ document.getElementById('list-nu').addEventListener("click", function () {
 
                 let renderH3 = "";
                 let renderShoses = "";
-                renderH3+= `
+                renderH3 += `
                 <div class="content-h3">
                 <h3 id="h3">_GIÀY NỮ_</h3>
                 </div> `;
                 listNam.forEach(object => {
-                    if(object.classify === "Giày Nữ"){
+                    if (object.classify === "Giày Nữ") {
 
-                        renderShoses+= `
+                        renderShoses += `
                         <div class="col">
                         <div class="card shoes-list">
                             <img src="${object.image}" class="card-img-top" alt="...">
@@ -290,8 +297,8 @@ document.getElementById('list-nu').addEventListener("click", function () {
                         </div>`;
                     }
                 })
-                   contentShoses.innerHTML = renderShoses;
-                    contentH3.innerHTML = renderH3;
+                contentShoses.innerHTML = renderShoses;
+                contentH3.innerHTML = renderH3;
 
             }
         }
@@ -313,14 +320,14 @@ document.getElementById('list-kit').addEventListener("click", function () {
 
                 let renderH3 = "";
                 let renderShoses = "";
-                renderH3+= `
+                renderH3 += `
                 <div class="content-h3">
                 <h3 id="h3">_GIÀY TRẺ EM_</h3>
                 </div> `;
                 listNam.forEach(object => {
-                    if(object.classify === "Giày Trẻ Em"){
+                    if (object.classify === "Giày Trẻ Em") {
 
-                        renderShoses+= `
+                        renderShoses += `
                         <div class="col">
                         <div class="card shoes-list">
                             <img src="${object.image}" class="card-img-top" alt="...">
@@ -338,20 +345,19 @@ document.getElementById('list-kit').addEventListener("click", function () {
                         </div>`;
                     }
                 })
-                   contentShoses.innerHTML = renderShoses;
-                    contentH3.innerHTML = renderH3;
+                contentShoses.innerHTML = renderShoses;
+                contentH3.innerHTML = renderH3;
 
             }
         }
     })
 });
-
-
-// Render để không mất số trên thanh Bag
 function renderCartNumber() {
     let productNumber = localStorage.getItem("cartNumber");
     if (productNumber) {
         document.querySelector(".position-absolute").textContent = productNumber;
     }
-}
-renderCartNumber();
+  }
+  renderCartNumber()
+  
+

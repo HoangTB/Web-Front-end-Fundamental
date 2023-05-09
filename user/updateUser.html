@@ -50,103 +50,21 @@
         <i class="fa-solid fa-list" onclick="handelList()"></i>
     </div>
     <section class="container1 forms">
-        <div class="form login" id="formSignIn">
-            <div class="form-content">
-                <img src="../image/icon/icon-logo.png" alt="">
-                <header>Login</header>
-                <form action="#">
-                    <div class="field input-field">
-                        <input type="email" placeholder="Email" class="email">
-                    </div>
-
-                    <div class="field input-field">
-                        <input type="password" placeholder="Password" class="password">
-                        <i class='bx bx-hide eye-icon'></i>
-                    </div>
-
-                    <div class="form-link">
-                        <a href="./forgot-pass.html" class="forgot-pass">Forgot password?</a>
-                    </div>
-
-                    <div class="field button-field">
-                        <button type="submit" id="btnLogin">Login</button>
-                    </div>
-                </form>
-
-                <div class="form-link">
-                    <span>Don't have an account? <a href="#" class="link signup-link">Signup</a></span>
-                </div>
-            </div>
-
-            <div class="line"></div>
-
-            <div class="media-options">
-                <a href="#" class="field facebook">
-                    <i class='bx bxl-facebook facebook-icon'></i>
-                    <span>Login with Facebook</span>
-                </a>
-            </div>
-
-            <div class="media-options">
-                <a href="#" class="field google">
-                    <img src="../image/icon/Logo.svg.png" alt="" class="google-img">
-                    <span>Login with Google</span>
-                </a>
-            </div>
-
-        </div>
-
-        <!-- Signup Form -->
-
-        <div class="form signup" id="formSignUp">
-            <div class="form-content">
-                <img src="../image/icon/icon-logo.png" alt="">
-                <header>Signup</header>
-                <form action="#">
-                    <div class="field input-field">
-                        <input type="text" placeholder="Email" class="input" id="email">
-                        <p class="error" id="error-email"></p>
-                    </div>
-
-                    <div class="field input-field">
-                        <input type="password" placeholder="Create password" class="password" id="password">
-                        <p class="error" id="error-password"></p>
-                    </div>
-
-                    <div class="field input-field">
-                        <input type="password" placeholder="Confirm password" class="password" id="repeatpassword">
-                        <i class='bx bx-hide eye-icon'></i>
-                        <p class="error" id="error-repeat-password"></p>
-                    </div>
-
-                    <div class="field button-field">
-                        <button type="submit" name="" id="btnSignup" name="button">SignUp</button>
-                    </div>
-                </form>
-
-                <div class="form-link">
-                    <span>Already have an account? <a href="#" class="link login-link">Login</a></span>
-                </div>
-            </div>
-
-            <div class="line"></div>
-
-            <div class="media-options">
-                <a href="#" class="field facebook">
-                    <i class='bx bxl-facebook facebook-icon'></i>
-                    <span>Login with Facebook</span>
-                </a>
-            </div>
-
-            <div class="media-options">
-                <a href="#" class="field google">
-                    <img src="../image/icon/Logo.svg.png" alt="" class="google-img">
-                    <span>Login with Google</span>
-                </a>
-            </div>
-
-        </div>
-
+        <table class="table table-dark table-striped" style="height: 80%;">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Email</th>
+                <th scope="col">Password</th>
+                <th scope="col">Địa chỉ</th>
+                <th scope="col">Phone</th>
+                <th scope="col">Chi tiết</th>
+              </tr>
+            </thead>
+            <tbody class="user-content">
+             
+            </tbody>
+          </table>
     </section>
 
     <footer>
@@ -195,10 +113,11 @@
     </footer>
 
  <!-- JavaScript -->
- <!-- <script src="/index.js"></script> -->
- <script src="/user/login-register.js"></script>
- <script src="/user/carts.js"></script>
+ <script src="/index.js"></script>
+ <!-- <script src="/user/login-register.js"></script>
+ <script src="/user/carts.js"></script> -->
  <script src="/db.js"></script>
+ <script src="/user/updateUser.js"></script>
 </body>
 
 </html>

@@ -6,20 +6,35 @@ function renderUser(objectUser) {
     const listUser = document.querySelector(".content-user");
     let contentUser = "";
     objectUser.forEach((object, index) => {
-        console.log(object)
-        console.log(index)
-        contentUser += `
-        <tbody class="content-user">
+
+
+        if(object.active === true){
+          contentUser += `
+ 
                     <tr>
                         <td class="text-center">${index+1}</td>
                         <td class=""><b>Email: </b> <span>${object.email}</span></td>
-                        <td class=""><b>Active: </b> <span class="text-primary" >Đang hoạt động</span></td>
+                        <td class=""><b>Active: </b> <span class="text-primary active-User">Đang hoạt động</span></td>
                         <td class="text-center">
-                            <button onclick="handleDelete(${object.id})">Delete</button>
+                            <button onclick="handleBlock('${object.email}')">Block</button>
                         </td>
                     </tr>
-                </tbody> 
+  
         `;
+        } else {
+          contentUser += `
+
+                    <tr>
+                        <td class="text-center">${index+1}</td>
+                        <td class=""><b>Email: </b> <span>${object.email}</span></td>
+                        <td class=""><b>Active: </b> <span class="text-danger active-User">Đang bị khóa</span></td>
+                        <td class="text-center">
+                            <button onclick="handleBlock('${object.email}')">Unblock</button>
+                        </td>
+                    </tr>
+       
+        `;
+        }
     });
     listUser.innerHTML = contentUser;
   
@@ -34,15 +49,20 @@ function objectSearch(value) {
   }
 
   // Xóa dữ liệu
-function handleDelete(id) {
-    let objectUser = JSON.parse(localStorage.getItem("Users"));
-    objectUser.forEach((object, index) => {
-      if (object.id == id) {
-        alert("Ban có muốn xóa User người dùng này không ?");
-        objectUser.splice(index, 1);
-  
+function handleBlock(email) {
+    let objectUser = JSON.parse(localStorage.getItem("Acount"));
+    objectUser.forEach((object) => {
+      if(object.email == email){
+        if (object.active === true) {
+          object.active = false;
+        } 
+        else{
+          object.active = true;
+        }
+
       }
+
     });
-    localStorage.setItem("Users", JSON.stringify(objectUser));
+    localStorage.setItem("Acount", JSON.stringify(objectUser));
     renderUser(objectUser);
   }

@@ -1,13 +1,4 @@
 
-// Render để không mất số trên thanh Bag
-function renderCartNumber() {
-  let productNumber = localStorage.getItem("cartNumber");
-  if (productNumber) {
-    document.querySelector(".position-absolute").textContent = productNumber;
-  }
-}
-renderCartNumber();
-
 
 // Mở ra tag Cart
 function handelCarts() {
@@ -18,8 +9,6 @@ function handelCarts() {
 function handelLogin() {
   window.location = "../user/login-register.html";
 }
-
-
 
 // cart
 
@@ -78,7 +67,7 @@ function renderCart() {
        <div class=""><span class="text">Số lượng:</span><span
        class="price">0 Sản phẩm</span></div>
         <div class=""><span class="text ">Tổng số tiền:</span><span class="price">0 VND </span></div>
-         <button type="button" class="btn-cost">Thanh Toán</button>
+         <button type="button" class="btn-cost" onclick="handleOrder()">Thanh Toán</button>
          </div>
 `;
   } else{
@@ -88,7 +77,7 @@ function renderCart() {
        <div class=""><span class="text">Số lượng:</span><span
        class="price">${productNumber} Sản phẩm</span></div>
         <div class=""><span class="text">Tổng số tiền:</span><span class="price">${cartCost.toLocaleString("de-DE")} VND </span></div>
-         <button type="button" class="btn-cost">Thanh Toán</button>
+         <button type="button" class="btn-cost" onclick="handleOrder()">Thanh Toán</button>
          </div>
 `;
   }
@@ -98,7 +87,7 @@ function renderCart() {
     Object.values(cartItems).map(item => {
       productCartContent += `
       <div class="row">     
-      <div><i class="fa-solid fa-trash fs-5 "></i></div>
+      <div><i class="fa-solid fa-trash fs-5 " onclick="deleteCarts('${item.id}')"></i></div>
           <div class="col-md-3 m-3">         
               <img class="img-fluid mx-auto d-block image" src="${item.image}" style="width: 60%;">
           </div>
@@ -116,6 +105,7 @@ function renderCart() {
                       </div>
                       <div class="col-md-4 quantity">
                           <label for="quantity">Quantity:</label>
+
                           <input id="quantity" type="number" value="${item.inCart}"
                               class="form-control quantity-input">
                       </div>
@@ -146,3 +136,125 @@ function pushOnUser(){
   let cartNumber = JSON.parse(localStorage("cartNumber"));
   console.log(cartNumber);
 }
+
+// Xóa cart
+function deleteCarts(id){
+  let deleteProductIncart = JSON.parse(localStorage.getItem("ProductIncart"));
+  let deleteCartNumber = JSON.parse(localStorage.getItem("cartNumber"));
+  // console.log(deleteCartNumber);
+  Object.keys(deleteProductIncart).forEach((key)=> {
+    // console.log(deleteProductIncart[key].id);
+    if(deleteProductIncart[key].id == id){
+      // console.log(deleteProductIncart[key]);
+      delete deleteProductIncart[key];
+      delete deleteCartNumber;  
+    }
+
+    // console.log(deleteCartNumber.length);
+    // for (let i = 0; i < deleteCartNumber.length; i++){
+    //   deleteCartNumber -=i;
+
+    //   console.log(deleteCartNumber);
+    // }
+  });
+
+  localStorage.setItem("ProductIncart",JSON.stringify(deleteProductIncart));
+  renderCart(id);
+}
+
+function Carts(){
+  let existingCarts  = JSON.parse(localStorage.getItem("Carts")) || []; 
+  let ProductIncart = JSON.parse(localStorage.getItem("ProductIncart")) || ""; 
+  // const productIds = Object.values(ProductIncart).map(product => product.id);
+  // const productName = Object.values(ProductIncart).map(product => product.name);
+  let cartNumber = JSON.parse(localStorage.getItem("cartNumber")) || "";
+  let totalCost = JSON.parse(localStorage.getItem("totalCost")) || "";
+  let User = JSON.parse(localStorage.getItem("User"));
+
+
+ let cart = {
+    email:User.email,
+    // id:productIds,
+    product: ProductIncart,
+    cartnumber:cartNumber,
+    totalprice:totalCost,
+  };
+
+  let emailExists = false;
+
+  // Kiểm tra xem email đã tồn tại trong danh sách giỏ hàng hay chưa
+  for (let i = 0; i < existingCarts.length; i++) {
+    if (existingCarts[i].email === User.email) {
+      // Email đã tồn tại, cập nhật thông tin giỏ hàng
+      existingCarts[i].product = cart.product;
+      existingCarts[i].cartnumber = cart.cartnumber;
+      existingCarts[i].totalprice = cart.totalprice;
+      emailExists = true;
+      break;
+    }
+  }
+
+  // Nếu email chưa tồn tại, thêm giỏ hàng mới vào danh sách
+  if (!emailExists) {
+    existingCarts.push(cart);
+  }
+
+  localStorage.setItem("Carts", JSON.stringify(existingCarts));
+}
+
+Carts();
+
+
+function renderCartNumber() {
+  let productNumber = localStorage.getItem("cartNumber");
+  if (productNumber) {
+      document.querySelector(".position-absolute").textContent = productNumber;
+  }
+}
+renderCartNumber()
+
+
+function handleOrder(){
+  const Order = JSON.parse(localStorage.getItem("Carts")) || [];
+  const User = JSON.parse(localStorage.getItem("User"));
+  const Carts = JSON.parse(localStorage.getItem("Carts"));
+  let templeOrder = JSON.parse(localStorage.getItem("Order"))  || [];
+  if(!localStorage.getItem("Order")){  
+      localStorage.setItem("Order", JSON.stringify(templeOrder));
+  }
+  Order.forEach(item => {
+    if(item.email === User.email){
+      templeOrder.push(Carts);
+      localStorage.setItem("Order", JSON.stringify(templeOrder));
+    }
+
+  })
+  Carts.forEach((value, index) =>{
+    console.log(111,value.email);
+    if(value.email === User.email){
+      Carts.splice(index, 1);
+    }
+  })
+
+  localStorage.setItem("Carts", JSON.stringify(Carts));
+
+}
+
+// function handleOrder() {
+//   const Order = JSON.parse(localStorage.getItem("Carts")) || [];
+//   const User = JSON.parse(localStorage.getItem("User"));
+//   let Carts = JSON.parse(localStorage.getItem("Carts"));
+
+//   const tempCart = [];
+//   Order.forEach(item => {
+//     if (item.email === User.email) {
+//       localStorage.setItem("Order", JSON.stringify(item));
+//     } else {
+//       tempCart.push(item);
+//     }
+//   });
+
+//   Carts = tempCart;
+
+//   localStorage.setItem("Carts", JSON.stringify(Carts));
+// }

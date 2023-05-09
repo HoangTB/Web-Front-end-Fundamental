@@ -1,4 +1,7 @@
 
+
+
+
 const url = new URL(document.URL);
 const id = url.searchParams.get("id");
 
@@ -111,7 +114,7 @@ function cartsNumber(element) {
     setItem(element);
 
 }
-//Cộng inCart vào Local
+//Tạo ProductIncart
 function setItem(element) {
     let cartItems = localStorage.getItem("ProductIncart");
     cartItems = JSON.parse(cartItems);
@@ -135,7 +138,7 @@ function setItem(element) {
     localStorage.setItem("ProductIncart", JSON.stringify(cartItems));
 
 }
-
+//Tạo Cost
 function totalCost(element){
     let cartCost = localStorage.getItem("totalCost");
     if(cartCost != null){
@@ -148,5 +151,10 @@ function totalCost(element){
 
 
 renderCartNumber();
+
+
+
+
+
 
 
