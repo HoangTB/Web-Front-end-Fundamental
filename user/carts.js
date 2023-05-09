@@ -138,28 +138,11 @@ function pushOnUser(){
 }
 
 // Xóa cart
-function deleteCarts(id){
-  let deleteProductIncart = JSON.parse(localStorage.getItem("ProductIncart"));
-  let deleteCartNumber = JSON.parse(localStorage.getItem("cartNumber"));
-  // console.log(deleteCartNumber);
-  Object.keys(deleteProductIncart).forEach((key)=> {
-    // console.log(deleteProductIncart[key].id);
-    if(deleteProductIncart[key].id == id){
-      // console.log(deleteProductIncart[key]);
-      delete deleteProductIncart[key];
-      delete deleteCartNumber;  
-    }
-
-    // console.log(deleteCartNumber.length);
-    // for (let i = 0; i < deleteCartNumber.length; i++){
-    //   deleteCartNumber -=i;
-
-    //   console.log(deleteCartNumber);
-    // }
-  });
-
-  localStorage.setItem("ProductIncart",JSON.stringify(deleteProductIncart));
-  renderCart(id);
+function deleteCarts(){
+      localStorage.removeItem("cartNumber");
+      localStorage.removeItem("totalCost");
+      localStorage.removeItem("ProductIncart");
+      window.location='./carts.html';
 }
 Carts();
 function Carts(){
