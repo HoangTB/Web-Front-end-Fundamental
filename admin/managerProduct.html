@@ -40,7 +40,8 @@
             <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
                 <div class="container-fluid">
                     <button class="fa-solid fa-rectangle-list" id="sidebarToggle"></button>
-                    <button class="fa-solid fa-arrow-right-to-bracket btn-user text-primary" onclick="handelUser()"></button>
+                    <button class="fa-solid fa-arrow-right-to-bracket btn-user text-primary"
+                        onclick="handelUser()"></button>
                     <button class="btn-add" onclick="handelAdd()">ADD</button>
                     <div class="item-search">
                         <input placeholder="Tìm Kiếm" oninput="objectSearch(this.value)">
@@ -56,16 +57,17 @@
             <div>
                 <h3 class="text-center pt-2">PRODUCT SHOES</h3>
             </div>
-            <table class="table">
-                <thead class="table-dark">
-                    <tr class="text-center">
-                        <th>#</th>
-                        <th colspan="3">Thông tin</th>
-                        <th>Action</th>
-                    </tr>
-                </thead>
-                <tbody class="content-product">
-                    <!-- <tr>
+            <div class="content-big">
+                <table class="table">
+                    <thead class="table-dark">
+                        <tr class="text-center">
+                            <th>#</th>
+                            <th colspan="3">Thông tin</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody class="content-product">
+                        <!-- <tr>
                         <td class="text-center pt-4">1</td>
                         <td><img src="/image/shoe-men-4.jpg" alt=""></td>
                         <td class="pt-4"><b>Tên sản phẩm: </b> <span>Nike Air Max</span></td>
@@ -76,8 +78,9 @@
                             <button>Delete</button>
                         </td>
                     </tr> -->
-                </tbody>
-            </table>
+                    </tbody>
+                </table>
+            </div>
         </div>
 
         <!-- Form Create -->

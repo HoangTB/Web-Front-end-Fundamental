@@ -50,23 +50,27 @@
         </div>
 
         <section class="shopping-cart">
-            <button onclick="handelHistory()">Lịch sử đơn hàng</button>
-            <div class="container">
-                <div class="content">
-                    <div class="row">
-                        <div class="col-md-12 col-lg-8">
-                            <div class="items">
-                                
-                            </div>
-                        </div>
-                        <div class="col-md-12 col-lg-4">
-                            <div class="summary total-Cart">
-                               
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <button>Lịch sử đơn hàng</button><br/><br/>
+            <table class="table">
+                <thead class="table-dark">
+                    <tr class="text-center">
+                        <th>#</th>
+                        <th colspan="5">Lịch sử đơn hàng</th>
+                    </tr>
+                </thead>
+                <tbody class="content-history">
+                            <!-- <tr>
+                                <td class="text-center pt-4">1</td>
+                                <td class="pt-4"><b>Email: </b> <span>Nike Air Max</span>
+                                <td class="pt-4"><b>Tên sản phẩm: </b> <span>Nike Air Max</span></td>
+                                <td class="pt-4"><b>Số lượng: </b> <span>Nike Air Max</span></td>
+                                <td class="pt-4"><b>Tổng Giá: </b> <span>Nike Air Max</span></td>
+                                <td class="text-center pt-4">
+                                    <button>Trạng thái</button>
+                                </td>
+                            </tr> -->
+                </tbody>
+            </table>
         </section>
 
         <footer>
@@ -116,8 +120,9 @@
     </main>
         <script src="/index.js"></script>
     <!-- <script src="/user/login-register.js"></script> -->
-    <script src="/user/carts.js"></script>
+    <!-- <script src="/user/carts.js"></script> -->
     <script src="/db.js"></script>
+    <script src="./carts-history.js"></script>
 </body>
 
 </html>

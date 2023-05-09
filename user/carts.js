@@ -103,13 +103,13 @@ function renderCart() {
                               </div>
                           </div>
                       </div>
-                      <div class="col-md-4 quantity">
+                      <div class="col-md-3 quantity">
                           <label for="quantity">Quantity:</label>
 
                           <input id="quantity" type="number" value="${item.inCart}"
                               class="form-control quantity-input">
                       </div>
-                      <div class="col-md-3 price fw-bold">
+                      <div class="col-md-4 price fw-bold">
                           <span>${item.price.toLocaleString("de-DE")} VND</span>
                       
                       </div>
@@ -161,7 +161,7 @@ function deleteCarts(id){
   localStorage.setItem("ProductIncart",JSON.stringify(deleteProductIncart));
   renderCart(id);
 }
-
+Carts();
 function Carts(){
   let existingCarts  = JSON.parse(localStorage.getItem("Carts")) || []; 
   let ProductIncart = JSON.parse(localStorage.getItem("ProductIncart")) || ""; 
@@ -174,7 +174,6 @@ function Carts(){
 
  let cart = {
     email:User.email,
-    // id:productIds,
     product: ProductIncart,
     cartnumber:cartNumber,
     totalprice:totalCost,
@@ -200,9 +199,8 @@ function Carts(){
   }
 
   localStorage.setItem("Carts", JSON.stringify(existingCarts));
-}
 
-Carts();
+}
 
 
 function renderCartNumber() {
@@ -218,43 +216,56 @@ function handleOrder(){
   const Order = JSON.parse(localStorage.getItem("Carts")) || [];
   const User = JSON.parse(localStorage.getItem("User"));
   const Carts = JSON.parse(localStorage.getItem("Carts"));
+  let productCart = Object.values(Carts).map(product => product.product);
+  console.log(111,productCart);
   let templeOrder = JSON.parse(localStorage.getItem("Order"))  || [];
   if(!localStorage.getItem("Order")){  
       localStorage.setItem("Order", JSON.stringify(templeOrder));
   }
-  Order.forEach(item => {
-    if(item.email === User.email){
-      templeOrder.push(Carts);
-      localStorage.setItem("Order", JSON.stringify(templeOrder));
-    }
 
-  })
+  if (productCart !== null && productCart.length > 0 && productCart[0] !== '') {
+    Order.forEach(item => {
+      if (item.email === User.email) {
+        templeOrder.push(Carts);
+        localStorage.setItem("Order", JSON.stringify(templeOrder));
+        alert("Cảm ơn bạn đã mua hàng !!");
+        window.location = './carts.html';
+      }
+    });
+  } else {
+    alert("Vui lòng thêm sản phẩm");
+    window.location = '/index.html#h3';
+  }
+  // Order.forEach(item => {
+  //   if(item.email === User.email && productCart != null){
+  //     templeOrder.push(Carts);
+  //     localStorage.setItem("Order", JSON.stringify(templeOrder));
+  //     alert("Cảm ơn bạn đã mua hàng !!")
+  //   }
+
+  // })
+
+  // if(productCart === null){
+  //   alert("Vui lòng thêm sản phẩm")
+  //   window.location = '/index.html#h3';
+  // }
+
   Carts.forEach((value, index) =>{
-    console.log(111,value.email);
+ 
     if(value.email === User.email){
       Carts.splice(index, 1);
     }
   })
 
+  localStorage.removeItem("totalCost");
+  localStorage.removeItem("ProductIncart");
+  localStorage.removeItem("cartNumber");
   localStorage.setItem("Carts", JSON.stringify(Carts));
+
+ 
 
 }
 
-// function handleOrder() {
-//   const Order = JSON.parse(localStorage.getItem("Carts")) || [];
-//   const User = JSON.parse(localStorage.getItem("User"));
-//   let Carts = JSON.parse(localStorage.getItem("Carts"));
-
-//   const tempCart = [];
-//   Order.forEach(item => {
-//     if (item.email === User.email) {
-//       localStorage.setItem("Order", JSON.stringify(item));
-//     } else {
-//       tempCart.push(item);
-//     }
-//   });
-
-//   Carts = tempCart;
-
-//   localStorage.setItem("Carts", JSON.stringify(Carts));
-// }
+function handelHistory(){
+  window.location = '/user/carts-history.html';
+}

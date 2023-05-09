@@ -57,19 +57,27 @@ function objectSearch(value) {
 
 // Login
 
-function handelLogin(){
+function handelLogin() {
     window.location = '/user/login-register.html';
 }
 
 // Ẩn hiện quyền truy cập Admin 
 const table = document.querySelector(".border-end");
+const contentBig = document.querySelector(".content-big");
+const btnAdd = document.querySelector(".btn-add");
 let adminDB = JSON.parse(localStorage.getItem("Admin"));
-if(adminDB === null){
+if (adminDB === null) {
     table.style.display = "none";
-}else {table.style.display= "inline-block";
+    contentBig.style.display = "none";
+    btnAdd.style.display = "none";
+
+} else {
+    table.style.display = "block";
+    contentBig.style.display = "block";
+    btnAdd.style.display = "block";
 }
 
 //
-function handelUser(){
+function handelUser() {
     window.location = '/';
 }

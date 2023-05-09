@@ -179,8 +179,10 @@ const listShoses = [
 ];
 
 
-localStorage.setItem("Shoses", JSON.stringify(listShoses));
-// const objectProductList = JSON.parse(localStorage.getItem("Shoses")); 
-// if(!objectProductList){
-//     localStorage.setItem("Shoses", JSON.stringify(listShoses));
-// }
+// localStorage.setItem("Shoses", JSON.stringify(listShoses));
+
+
+const objectProductList = JSON.parse(localStorage.getItem("Shoses")); 
+if(!objectProductList){
+    localStorage.setItem("Shoses", JSON.stringify(listShoses));
+}
