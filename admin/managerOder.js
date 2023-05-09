@@ -5,12 +5,15 @@ function renderOrder() {
     const Order = JSON.parse(localStorage.getItem("Order"));
     let contentOrder = document.querySelector(".content-product");
     let onLoadOrder = "";
+    let totalPriceSum = 0;
     Order.forEach((element, index) => {
+        let orderTotalPrice = 0;
         let productOder = Object.values(element).map(product => product.product);
             const productNames = Object.keys(productOder.reduce((result, obj) => ({ ...result, ...obj }), {}));
-            console.log(productNames);
-        element.forEach((value, key) => {
  
+
+        element.forEach((value, key) => {
+            orderTotalPrice += value.totalprice;
             onLoadOrder += `
         <tr>
         <td class="text-center pt-4">${index + 1}</td>
@@ -25,8 +28,9 @@ function renderOrder() {
         `
         })
         contentOrder.innerHTML = onLoadOrder;
-
-
-    });
+        totalPriceSum += orderTotalPrice;
+        console.log(111,totalPriceSum);
+    });     
+    document.querySelector(".total").textContent = totalPriceSum.toLocaleString("de-DE")+" VND";
 
 }

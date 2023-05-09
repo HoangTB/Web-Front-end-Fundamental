@@ -212,7 +212,7 @@ function handleOrder(){
         templeOrder.push(Carts);
         localStorage.setItem("Order", JSON.stringify(templeOrder));
         alert("Cảm ơn bạn đã mua hàng !!");
-        window.location = './carts.html';
+        window.location = './carts-history.html';
       }
     });
   } else {
