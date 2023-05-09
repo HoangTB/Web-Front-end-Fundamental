@@ -269,3 +269,6 @@ function handleOrder(){
 function handelHistory(){
   window.location = '/user/carts-history.html';
 }
+
+
+
